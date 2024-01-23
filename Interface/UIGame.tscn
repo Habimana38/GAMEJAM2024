@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://de3mparvg64gn"]
+
+[ext_resource type="PackedScene" uid="uid://byiaov7kf83h" path="res://player/player_1.tscn" id="1_511cm"]
+[ext_resource type="PackedScene" uid="uid://baidg5heu4cdu" path="res://player/player_2.tscn" id="2_2mtbw"]
+[ext_resource type="PackedScene" uid="uid://btq5v1oerbtb3" path="res://level/left.tscn" id="3_pis01"]
+[ext_resource type="Script" path="res://level/Scripts/GameManager.gd" id="3_xu41r"]
+[ext_resource type="PackedScene" uid="uid://dmp7vxkj4k45e" path="res://Interface/main_ui.tscn" id="5_364iq"]
+[ext_resource type="PackedScene" uid="uid://cu2mm1fip1nxg" path="res://level/game_manager.tscn" id="6_pu278"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_741jg"]
+size = Vector2(64, 882)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player 1" parent="." instance=ExtResource("1_511cm")]
+position = Vector2(200, 500)
+motion_mode = 0
+
+[node name="Player 2" parent="." instance=ExtResource("2_2mtbw")]
+position = Vector2(1750, 525)
+motion_mode = 0
+script = ExtResource("3_xu41r")
+Player1Score = 0
+Player2Score = 0
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1024, 562)
+
+[node name="Area2D" type="StaticBody2D" parent="Node2D"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+shape = SubResource("RectangleShape2D_741jg")
+
+[node name="Left" parent="Node2D" instance=ExtResource("3_pis01")]
+position = Vector2(-1024, -512)
+
+[node name="Right" parent="Node2D" instance=ExtResource("3_pis01")]
+position = Vector2(1024, -512)
+scale = Vector2(-1, 1)
+
+[node name="MainUI" parent="." instance=ExtResource("5_364iq")]
+
+[node name="Player1" parent="MainUI/PanelContainer/MarginContainer" index="0" node_paths=PackedStringArray("gm")]
+text = "0"
+gm = NodePath("../../../../GameManager")
+
+[node name="TimerUI" parent="MainUI/PanelContainer/MarginContainer" index="1" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../../GameManager")
+
+[node name="player2" parent="MainUI/PanelContainer/MarginContainer" index="2" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../../GameManager")
+
+[node name="GameManager" parent="." instance=ExtResource("6_pu278")]
+
+[editable path="MainUI"]
