@@ -1,34 +1,55 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr4x242k3lcy7"]
 
-[ext_resource type="PackedScene" uid="uid://byiaov7kf83h" path="res://player/player_1.tscn" id="1_6g0gn"]
-[ext_resource type="PackedScene" uid="uid://baidg5heu4cdu" path="res://player/player_2.tscn" id="2_tj88d"]
 [ext_resource type="PackedScene" uid="uid://btq5v1oerbtb3" path="res://level/left.tscn" id="3_4newd"]
+[ext_resource type="PackedScene" uid="uid://go0ljd5c18y" path="res://level/Map/cage.tscn" id="3_w5mov"]
+[ext_resource type="PackedScene" uid="uid://cu2mm1fip1nxg" path="res://level/game_manager.tscn" id="5_j3dy4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741jg"]
-size = Vector2(64, 882)
+size = Vector2(34, 896)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Player 1" parent="." instance=ExtResource("1_6g0gn")]
-position = Vector2(200, 500)
-motion_mode = 0
+[node name="GameManager" parent="." node_paths=PackedStringArray("player1_spawn", "player2_spawn", "ball_spawn") instance=ExtResource("5_j3dy4")]
+player1_spawn = NodePath("../Level/Spawn_player_1")
+player2_spawn = NodePath("../Level/Spawn_player_2")
+ball_spawn = NodePath("../Level/Ball spawn")
 
-[node name="Player 2" parent="." instance=ExtResource("2_tj88d")]
-position = Vector2(1750, 525)
-motion_mode = 0
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(1024, 512)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(1024, 562)
-
-[node name="Area2D" type="StaticBody2D" parent="Node2D"]
+[node name="Frontier" type="StaticBody2D" parent="Level"]
 collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Frontier"]
 shape = SubResource("RectangleShape2D_741jg")
 
-[node name="Left" parent="Node2D" instance=ExtResource("3_4newd")]
+[node name="Polygon2D" type="Polygon2D" parent="Level/Frontier"]
+position = Vector2(-3.05176e-05, -0.511986)
+scale = Vector2(0.500001, 1.024)
+color = Color(0, 0, 0, 0.627451)
+polygon = PackedVector2Array(-32, -437, -0.343666, -437, 32, -437, 32, 438, 0.499985, 438, -32, 438)
+
+[node name="Left" parent="Level" instance=ExtResource("3_4newd")]
 position = Vector2(-1024, -512)
 
-[node name="Right" parent="Node2D" instance=ExtResource("3_4newd")]
+[node name="Right" parent="Level" instance=ExtResource("3_4newd")]
 position = Vector2(1024, -512)
 scale = Vector2(-1, 1)
+
+[node name="Ball spawn" type="Node2D" parent="Level"]
+
+[node name="Spawn_player_1" type="Node2D" parent="Level"]
+position = Vector2(-680, 0)
+
+[node name="Spawn_player_2" type="Node2D" parent="Level"]
+position = Vector2(728, 0)
+
+[node name="Cage" parent="Level" node_paths=PackedStringArray("gamemanager") instance=ExtResource("3_w5mov")]
+position = Vector2(-992, 0)
+rotation = -3.14159
+gamemanager = NodePath("../../GameManager")
+
+[node name="Cage2" parent="Level" node_paths=PackedStringArray("gamemanager") instance=ExtResource("3_w5mov")]
+position = Vector2(992, 0)
+is_player1 = false
+gamemanager = NodePath("../../GameManager")

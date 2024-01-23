@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 var screen_size
 var input : Vector2;
@@ -12,14 +13,14 @@ var input : Vector2;
 @export var move_left : String;
 @export var move_right : String;
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	screen_size = get_viewport_rect().size
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	
-	input = Vector2.ZERO  # Réinitialiser le vecteur d'entrée à chaque frame
+	input = Vector2.ZERO  
 
 	if Input.is_action_pressed(move_right):
 		input.x += 1
@@ -48,7 +49,7 @@ func apply_friction(amount):
 		velocity = Vector2.ZERO
 		
 func apply_acceleration(accel):
-	print(accel);
 	velocity += accel;
 	velocity = velocity.limit_length(maxSpeed)
+
 
