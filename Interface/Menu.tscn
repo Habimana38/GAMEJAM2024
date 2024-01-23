@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://beraq6up5wsp3"]
+
+[ext_resource type="Theme" uid="uid://drgbriahi2tdu" path="res://Interface/Themes/theme.tres" id="1_f52sm"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.308
+anchor_top = 0.117
+anchor_right = 0.684
+anchor_bottom = 0.869
+offset_left = -6.78406
+offset_top = -7.80801
+offset_right = 23.168
+offset_bottom = 22.144
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("1_f52sm")
+text = "Menu"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 80
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_f52sm")
+text = "Reprendre"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_f52sm")
+text = "Quitter"
+
+[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_f52sm")
+text = "Option"
