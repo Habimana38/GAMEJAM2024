@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 var screen_size
 var input : Vector2;
@@ -48,6 +49,7 @@ func apply_friction(amount):
 		velocity = Vector2.ZERO
 		
 func apply_acceleration(accel):
-	print(accel);
 	velocity += accel;
 	velocity = velocity.limit_length(maxSpeed)
+
+

@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr4x242k3lcy7"]
+
+[ext_resource type="Script" path="res://level/Map/Cage.gd" id="2_ta5o8"]
+[ext_resource type="PackedScene" uid="uid://btq5v1oerbtb3" path="res://level/left.tscn" id="3_4newd"]
+[ext_resource type="PackedScene" uid="uid://cu2mm1fip1nxg" path="res://level/game_manager.tscn" id="5_j3dy4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_741jg"]
+size = Vector2(34, 896)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8keb5"]
+size = Vector2(64, 324)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(1024, 512)
+
+[node name="Frontier" type="StaticBody2D" parent="Level"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Frontier"]
+shape = SubResource("RectangleShape2D_741jg")
+
+[node name="Polygon2D" type="Polygon2D" parent="Level/Frontier"]
+position = Vector2(-3.05176e-05, -0.511986)
+scale = Vector2(0.500001, 1.024)
+color = Color(0, 0, 0, 0.627451)
+polygon = PackedVector2Array(-32, -437, -0.343666, -437, 32, -437, 32, 438, 0.499985, 438, -32, 438)
+
+[node name="Left" parent="Level" instance=ExtResource("3_4newd")]
+position = Vector2(-1024, -512)
+
+[node name="Right" parent="Level" instance=ExtResource("3_4newd")]
+position = Vector2(1024, -512)
+scale = Vector2(-1, 1)
+
+[node name="Ball spawn" type="Node2D" parent="Level"]
+
+[node name="Spawn_player_1" type="Node2D" parent="Level"]
+position = Vector2(-680, 0)
+
+[node name="Spawn_player_2" type="Node2D" parent="Level"]
+position = Vector2(728, 0)
+
+[node name="Cage_left" type="Area2D" parent="Level" groups=["Cages"]]
+position = Vector2(-992, 0)
+collision_layer = 2
+script = ExtResource("2_ta5o8")
+is_player1 = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Cage_left"]
+shape = SubResource("RectangleShape2D_8keb5")
+
+[node name="Polygon2D" type="Polygon2D" parent="Level/Cage_left"]
+color = Color(0.678431, 0.141176, 0.156863, 0.776471)
+polygon = PackedVector2Array(-32, 162, 32, 162, 32, -162, -32, -162)
+
+[node name="GameManager" parent="." instance=ExtResource("5_j3dy4")]
+
+[node name="Cage_right" type="Area2D" parent="." groups=["Cages"]]
+position = Vector2(992, 0)
+collision_layer = 2
+script = ExtResource("2_ta5o8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cage_right"]
+shape = SubResource("RectangleShape2D_8keb5")
+
+[node name="Polygon2D" type="Polygon2D" parent="Cage_right"]
+color = Color(0.678431, 0.141176, 0.156863, 0.776471)
+polygon = PackedVector2Array(-32, 162, 32, 162, 32, -162, -32, -162)
+
+[connection signal="body_entered" from="Level/Cage_left" to="Level/Cage_left" method="_on_body_entered"]
+[connection signal="body_entered" from="Cage_right" to="Cage_right" method="_on_body_entered"]

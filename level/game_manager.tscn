@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu2mm1fip1nxg"]
+[gd_scene load_steps=5 format=3 uid="uid://cu2mm1fip1nxg"]
 
 [ext_resource type="Script" path="res://level/Scripts/GameManager.gd" id="1_y2s5v"]
+[ext_resource type="PackedScene" uid="uid://byiaov7kf83h" path="res://player/player_1.tscn" id="2_l6xnp"]
+[ext_resource type="PackedScene" uid="uid://baidg5heu4cdu" path="res://player/player_2.tscn" id="3_3s03g"]
+[ext_resource type="PackedScene" uid="uid://cugrsp5rlkf76" path="res://Ball/ball.tscn" id="4_vx1cg"]
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("timer")]
 script = ExtResource("1_y2s5v")
+player1_scene = ExtResource("2_l6xnp")
+player2_scene = ExtResource("3_3s03g")
+ball_scene = ExtResource("4_vx1cg")
 timer = NodePath("Timer")
 
 [node name="Timer" type="Timer" parent="."]

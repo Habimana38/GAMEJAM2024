@@ -11,10 +11,11 @@ radius = 40.0125
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.995098, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[node name="Player" type="CharacterBody2D"]
-collision_mask = 3
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 11
 motion_mode = 1
 wall_min_slide_angle = 0.0
+platform_wall_layers = 8
 script = ExtResource("2_eivu7")
 maxSpeed = 1200
 acceleration = 6000

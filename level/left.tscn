@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://btq5v1oerbtb3"]
+[gd_scene load_steps=6 format=3 uid="uid://btq5v1oerbtb3"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://bvss0vh0c7wxq" path="res://level/physic/side.tres" id="1_abxx1"]
 
@@ -13,9 +13,6 @@ size = Vector2(20, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyq4i"]
 size = Vector2(64, 16)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8l06"]
-size = Vector2(64, 324)
 
 [node name="side" type="Node2D"]
 
@@ -72,14 +69,3 @@ position = Vector2(32, 684)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bord_cage_bas"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_vyq4i")
-
-[node name="CAGE" type="StaticBody2D" parent="."]
-position = Vector2(32, 512)
-collision_layer = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CAGE"]
-shape = SubResource("RectangleShape2D_q8l06")
-
-[node name="Polygon2D" type="Polygon2D" parent="CAGE"]
-color = Color(0.0941176, 0.0941176, 0.0941176, 0.776471)
-polygon = PackedVector2Array(-32, 162, 32, 162, 32, -162, -32, -162)
