@@ -105,6 +105,7 @@ move_right_player2={
 
 2d_physics/layer_1="Player"
 2d_physics/layer_2="frontier"
+2d_physics/layer_3="BALL"
 
 [physics]
 

@@ -1,23 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqj07dpfv3bae"]
+[gd_scene load_steps=6 format=3 uid="uid://dqj07dpfv3bae"]
 
 [ext_resource type="Script" path="res://player/Script/player.gd" id="2_eivu7"]
+[ext_resource type="Script" path="res://player/Line2D.gd" id="3_2mlgh"]
 [ext_resource type="Texture2D" uid="uid://crw5o8xwki1pl" path="res://player/Sprite/playertest.png" id="3_dgk52"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi0lq"]
-radius = 24.0208
+radius = 40.0125
+
+[sub_resource type="Curve" id="Curve_trrqd"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.995098, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 3
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("2_eivu7")
 maxSpeed = 1200
-acceleration = 2000
-friction = 2000
+acceleration = 6000
+friction = 5000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_wi0lq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1.90735e-06, -1.90735e-06)
-scale = Vector2(0.48, 0.48)
+position = Vector2(-1.78814e-06, -1.78814e-06)
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_dgk52")
+
+[node name="Line2D" type="Line2D" parent="."]
+show_behind_parent = true
+width = 20.0
+width_curve = SubResource("Curve_trrqd")
+script = ExtResource("3_2mlgh")
