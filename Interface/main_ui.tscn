@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmp7vxkj4k45e"]
 
-[ext_resource type="Script" path="res://Interface/Player1Score.gd" id="1_e0qsf"]
-[ext_resource type="Script" path="res://Interface/TimerUI.gd" id="2_xsu3y"]
-[ext_resource type="Script" path="res://Interface/Player2Score.gd" id="3_6klg5"]
+[ext_resource type="Script" path="res://Interface/Scripts/Player1Score.gd" id="1_e0qsf"]
+[ext_resource type="Script" path="res://Interface/Scripts/TimerUI.gd" id="2_xsu3y"]
+[ext_resource type="Script" path="res://Interface/Scripts/Player2Score.gd" id="3_qexhi"]
 
 [node name="MainUI" type="CanvasLayer"]
 follow_viewport_enabled = true
@@ -39,4 +39,4 @@ script = ExtResource("2_xsu3y")
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
-script = ExtResource("3_6klg5")
+script = ExtResource("3_qexhi")
