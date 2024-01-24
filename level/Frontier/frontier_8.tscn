@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://drwayk1arr7w4"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://c0d2ayxdcuu43" path="res://level/Frontier/bounce_frontier.tres" id="1_jd33o"]
+[ext_resource type="Script" path="res://level/Frontier/script frontier/Frontier8.gd" id="1_n3mp6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol257"]
+size = Vector2(32, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a50t"]
+size = Vector2(32, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd11n"]
+size = Vector2(32, 256)
+
+[node name="Frontier8" type="AnimatableBody2D" node_paths=PackedStringArray("walls")]
+physics_material_override = ExtResource("1_jd33o")
+script = ExtResource("1_n3mp6")
+walls = [NodePath("haut"), NodePath("mid"), NodePath("bas")]
+enableColor = Color(0.976471, 0, 0, 1)
+disableColor = Color(1, 0, 0, 0.462745)
+
+[node name="haut" type="CollisionShape2D" parent="."]
+position = Vector2(0, -320)
+rotation = 3.14159
+shape = SubResource("RectangleShape2D_ol257")
+
+[node name="Polygon2D" type="Polygon2D" parent="haut"]
+polygon = PackedVector2Array(-16, 128, 16, 128, 16, -128, -16, -128)
+
+[node name="mid" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4a50t")
+
+[node name="Polygon2D" type="Polygon2D" parent="mid"]
+polygon = PackedVector2Array(-16, -128, 16, -128, 16, 128, -16, 128)
+
+[node name="bas" type="CollisionShape2D" parent="."]
+position = Vector2(0, 320)
+shape = SubResource("RectangleShape2D_sd11n")
+
+[node name="Polygon2D" type="Polygon2D" parent="bas"]
+polygon = PackedVector2Array(-16, -128, 16, -128, 16, 128, -16, 128)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

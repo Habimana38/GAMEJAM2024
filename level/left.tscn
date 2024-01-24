@@ -3,13 +3,13 @@
 [ext_resource type="PhysicsMaterial" uid="uid://bvss0vh0c7wxq" path="res://level/physic/side.tres" id="1_abxx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpkp4"]
-size = Vector2(1024, 17)
+size = Vector2(1024, 63.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_to0n8"]
-size = Vector2(18, 300)
+size = Vector2(64, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvvfw"]
-size = Vector2(18.3139, 300)
+size = Vector2(66.5109, 300)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyq4i"]
 size = Vector2(64, 16)
@@ -21,7 +21,7 @@ position = Vector2(512, 56)
 physics_material_override = ExtResource("1_abxx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="up"]
-position = Vector2(0, -1)
+position = Vector2(0, -24.25)
 shape = SubResource("RectangleShape2D_mpkp4")
 
 [node name="down" type="StaticBody2D" parent="."]
@@ -29,7 +29,7 @@ position = Vector2(512, 968)
 physics_material_override = ExtResource("1_abxx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="down"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 24)
 shape = SubResource("RectangleShape2D_mpkp4")
 
 [node name="up_left" type="StaticBody2D" parent="."]
@@ -37,7 +37,7 @@ position = Vector2(56, 562)
 physics_material_override = ExtResource("1_abxx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="up_left"]
-position = Vector2(-1, -362)
+position = Vector2(-24, -362)
 shape = SubResource("RectangleShape2D_to0n8")
 
 [node name="down_left" type="StaticBody2D" parent="."]
@@ -46,16 +46,19 @@ scale = Vector2(0.962249, 1)
 physics_material_override = ExtResource("1_abxx1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="down_left"]
-position = Vector2(-0.843071, 363)
+position = Vector2(-24.9416, 363)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_fvvfw")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(0, 50)
+color = Color(0, 0, 0.258824, 1)
 polygon = PackedVector2Array(1025, 14, 1025, -50, 0, -50, 0, 300, 64, 300, 64, 14)
 
 [node name="Polygon2D2" type="Polygon2D" parent="."]
 position = Vector2(0, 974)
 scale = Vector2(1, -1)
+color = Color(0, 0, 0.258824, 1)
 polygon = PackedVector2Array(1025, 14, 1025, -50, 0, -50, 0, 300, 64, 300, 64, 14)
 
 [node name="bord_cage_haut" type="StaticBody2D" parent="."]

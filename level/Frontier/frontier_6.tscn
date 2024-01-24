@@ -11,6 +11,7 @@ script = ExtResource("1_y6ym6")
 force = 500.0
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 1, 1, 1)
 polygon = PackedVector2Array(-24, 448, 24, 448, 24, -448, -24, -448)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
