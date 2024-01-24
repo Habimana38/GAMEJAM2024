@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccdfdrmmyfxq7"]
+[gd_scene load_steps=5 format=3 uid="uid://ccdfdrmmyfxq7"]
 
 [ext_resource type="Theme" uid="uid://drgbriahi2tdu" path="res://Interface/Themes/theme.tres" id="1_8vtm0"]
+[ext_resource type="Texture2D" uid="uid://b40xfmytwf7qs" path="res://Interface/Links/Button/Play.png" id="2_n6st0"]
+[ext_resource type="Texture2D" uid="uid://gbsgct284ipn" path="res://Interface/Links/Button/Option.png" id="3_on33w"]
+[ext_resource type="Texture2D" uid="uid://b0nc8w5cdawt2" path="res://Interface/Links/Button/Quit.png" id="4_aona6"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -41,23 +44,29 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 80
+theme_override_constants/separation = 25
 alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_8vtm0")
-text = "Start"
+icon = ExtResource("2_n6st0")
+flat = true
 icon_alignment = 1
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Option" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_8vtm0")
-text = "Option"
+button_mask = 0
+icon = ExtResource("3_on33w")
+flat = true
 icon_alignment = 1
 
-[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_8vtm0")
-text = "Quitter"
+icon = ExtResource("4_aona6")
+flat = true
 icon_alignment = 1
