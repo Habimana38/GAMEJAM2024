@@ -14,6 +14,8 @@ class_name GameManager
 @export var player2Score : int = 0
 @export var timer : Timer
 
+signal on_player_score
+
 var player1
 var player2
 var ball : Ball
@@ -47,10 +49,12 @@ func _spawn():
 	
 func _add_point_player1():
 	player1Score += 1
+	on_player_score.emit()
 
 func _add_point_player2():
 	player2Score += 1
-
+	on_player_score.emit()
+	
 func _restart():
 	ball.queue_free()
 	player1.global_position = player1_spawn.global_position

@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkr2ulr4mg80w"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://c0d2ayxdcuu43" path="res://level/Frontier/bounce_frontier.tres" id="1_0cn0y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pc7vj"]
+size = Vector2(79.196, 79.196)
+
+[node name="Frontier3" type="StaticBody2D"]
+z_index = -1
+scale = Vector2(2, 2)
+physics_material_override = ExtResource("1_0cn0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_pc7vj")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D"]
+position = Vector2(1.41737, 1.41737)
+rotation = 0.785398
+scale = Vector2(0.84382, 0.8125)
+color = Color(0.741176, 0.439216, 0.788235, 1)
+polygon = PackedVector2Array(-2.37546, -68.9231, 64, 0, 64, 0, -2.37546, 68.9231, -68.7404, 2.52138e-06)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-6.10352e-05, 332)
+rotation = -0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pc7vj")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D3"]
+rotation = 0.785398
+scale = Vector2(0.8125, 0.863281)
+color = Color(0.741176, 0.439216, 0.788235, 1)
+polygon = PackedVector2Array(7.27408e-05, -64.8688, 68.9232, 0, 68.9232, 0, 7.74996e-05, 64.8688, -68.923, 0)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(0, -304)
+rotation = -0.785397
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_pc7vj")
+
+[node name="Polygon2D" type="Polygon2D" parent="CollisionShape2D4"]
+rotation = 0.785398
+scale = Vector2(0.8125, 0.863281)
+color = Color(0.741176, 0.439216, 0.788235, 1)
+polygon = PackedVector2Array(7.27408e-05, -64.8688, 68.9232, 0, 68.9232, 0, 7.74996e-05, 64.8688, -68.923, 0)

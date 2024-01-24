@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://ch2xuyop2qa14"]
+
+[ext_resource type="Script" path="res://level/Frontier/script frontier/frontier_4.gd" id="1_5vjql"]
+[ext_resource type="PhysicsMaterial" uid="uid://c0d2ayxdcuu43" path="res://level/Frontier/bounce_frontier.tres" id="1_jo56s"]
+
+[sub_resource type="Curve2D" id="Curve2D_wn1x8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -448, 0, 0, 0, 0, 0, 448)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_egf02"]
+resource_name = "frontier4"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.153, 0.8461, 0.153]
+}
+
+[sub_resource type="Animation" id="Animation_gsu6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.153]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pr5go"]
+_data = {
+"RESET": SubResource("Animation_gsu6r"),
+"frontier4": SubResource("Animation_egf02")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcntr"]
+size = Vector2(270.3, 48)
+
+[node name="Frontier4" type="Path2D"]
+curve = SubResource("Curve2D_wn1x8")
+script = ExtResource("1_5vjql")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
+callback_mode_process = 0
+libraries = {
+"": SubResource("AnimationLibrary_pr5go")
+}
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(0, -310.916)
+rotation = 1.5708
+progress = 137.088
+
+[node name="AnimatedRigidBody2D" type="StaticBody2D" parent="PathFollow2D"]
+collision_layer = 3
+physics_material_override = ExtResource("1_jo56s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/AnimatedRigidBody2D"]
+shape = SubResource("RectangleShape2D_vcntr")
+
+[node name="Polygon2D" type="Polygon2D" parent="PathFollow2D/AnimatedRigidBody2D"]
+color = Color(0.462745, 0.6, 0, 1)
+polygon = PackedVector2Array(134.949, 24, 134.949, -24, -137.051, -24, -137.051, 24)

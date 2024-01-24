@@ -20,8 +20,11 @@ motion_mode = 0
 position = Vector2(1750, 525)
 motion_mode = 0
 script = ExtResource("3_xu41r")
-Player1Score = 0
-Player2Score = 0
+player1_scene = null
+player2_scene = null
+ball_scene = null
+player1Score = 0
+player2Score = 0
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(1024, 562)
