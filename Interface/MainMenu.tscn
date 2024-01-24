@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccdfdrmmyfxq7"]
+[gd_scene load_steps=7 format=3 uid="uid://ccdfdrmmyfxq7"]
 
 [ext_resource type="Theme" uid="uid://drgbriahi2tdu" path="res://Interface/Themes/theme.tres" id="1_8vtm0"]
 [ext_resource type="Texture2D" uid="uid://b40xfmytwf7qs" path="res://Interface/Links/Button/Play.png" id="2_n6st0"]
+[ext_resource type="Texture2D" uid="uid://doidwpxgepuss" path="res://Interface/Links/Logo.png" id="3_f0vix"]
 [ext_resource type="Texture2D" uid="uid://gbsgct284ipn" path="res://Interface/Links/Button/Option.png" id="3_on33w"]
 [ext_resource type="Texture2D" uid="uid://b0nc8w5cdawt2" path="res://Interface/Links/Button/Quit.png" id="4_aona6"]
+[ext_resource type="Texture2D" uid="uid://b2in4v65ts0iw" path="res://Interface/Links/menu fond.jpg" id="5_5khni"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,41 +15,61 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_5khni")
+expand_mode = 3
+
+[node name="Label" type="TextureRect" parent="."]
+clip_contents = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -400.0
-offset_right = 400.0
-offset_bottom = 400.0
+offset_left = -634.0
+offset_top = -372.0
+offset_right = 636.0
+offset_bottom = 33.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_top = 30
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
-clip_contents = true
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("1_8vtm0")
-text = "Menu"
-horizontal_alignment = 1
+texture = ExtResource("3_f0vix")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -12.0
+offset_right = 406.0
+offset_bottom = 238.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 30
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 25
-alignment = 1
+theme_override_constants/margin_left = 80
 
-[node name="Play" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Play" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -56,7 +78,7 @@ icon = ExtResource("2_n6st0")
 flat = true
 icon_alignment = 1
 
-[node name="Option" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Option" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_8vtm0")
 button_mask = 0
@@ -64,7 +86,7 @@ icon = ExtResource("3_on33w")
 flat = true
 icon_alignment = 1
 
-[node name="Quit" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_8vtm0")
 icon = ExtResource("4_aona6")

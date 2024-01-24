@@ -44,16 +44,6 @@ scale = Vector2(-1, 1)
 
 [node name="MainUI" parent="." instance=ExtResource("5_364iq")]
 
-[node name="Player1" parent="MainUI/PanelContainer/MarginContainer" index="0" node_paths=PackedStringArray("gm")]
-text = "0"
-gm = NodePath("../../../../GameManager")
-
-[node name="TimerUI" parent="MainUI/PanelContainer/MarginContainer" index="1" node_paths=PackedStringArray("gm")]
-gm = NodePath("../../../../GameManager")
-
-[node name="player2" parent="MainUI/PanelContainer/MarginContainer" index="2" node_paths=PackedStringArray("gm")]
-gm = NodePath("../../../../GameManager")
-
 [node name="GameManager" parent="." instance=ExtResource("6_pu278")]
 
 [editable path="MainUI"]
