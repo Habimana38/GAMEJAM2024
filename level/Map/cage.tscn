@@ -25,7 +25,7 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_8keb5")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.678431, 0.141176, 0.156863, 0.776471)
+color = Color(0.4, 0, 0.8, 0.678431)
 polygon = PackedVector2Array(-32, 162, 32, 162, 32, -162, -32, -162)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

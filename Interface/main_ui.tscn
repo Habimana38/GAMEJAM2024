@@ -33,3 +33,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
 script = ExtResource("3_qexhi")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0

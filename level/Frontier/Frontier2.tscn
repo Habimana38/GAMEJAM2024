@@ -3,18 +3,18 @@
 [ext_resource type="PhysicsMaterial" uid="uid://c0d2ayxdcuu43" path="res://level/Frontier/bounce_frontier.tres" id="1_8s43x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m4sjd"]
-size = Vector2(80, 352)
+size = Vector2(80, 320)
 
 [node name="Frontier2" type="StaticBody2D"]
 physics_material_override = ExtResource("1_8s43x")
 
 [node name="haut" type="CollisionShape2D" parent="."]
-position = Vector2(0, -272)
+position = Vector2(0, -288)
 shape = SubResource("RectangleShape2D_m4sjd")
 
 [node name="Polygon2D2" type="Polygon2D" parent="haut"]
-position = Vector2(0, -272)
-color = Color(0, 0.635294, 0.168627, 1)
+position = Vector2(0, -247.273)
+scale = Vector2(1, 0.909091)
 polygon = PackedVector2Array(-40, 96, 40, 96, 40, 448, -40, 448, -40, 448)
 
 [node name="bas" type="CollisionShape2D" parent="."]
@@ -22,6 +22,6 @@ position = Vector2(0, 272)
 shape = SubResource("RectangleShape2D_m4sjd")
 
 [node name="Polygon2D" type="Polygon2D" parent="bas"]
-position = Vector2(0, -272)
-color = Color(0, 0.635294, 0.168627, 1)
+position = Vector2(0, -251.636)
+scale = Vector2(1, 0.954546)
 polygon = PackedVector2Array(-40, 96, 40, 96, 40, 448, -40, 448, -40, 448)

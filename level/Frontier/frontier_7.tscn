@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://c80qwqixyvcdl"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://c0d2ayxdcuu43" path="res://level/Frontier/bounce_frontier.tres" id="1_8fh57"]
+[ext_resource type="Script" path="res://level/Frontier/script frontier/frontier_7.gd" id="2_4crvp"]
+[ext_resource type="Texture2D" uid="uid://dt7ugqqg15dn8" path="res://level/Frontier/Sprite frontier/RondBlanc.png" id="3_n6utk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nhbqk"]
+radius = 130.231
+
+[sub_resource type="Animation" id="Animation_0b0lx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_c8max"]
+resource_name = "frontier7"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43dfu"]
+_data = {
+"RESET": SubResource("Animation_0b0lx"),
+"frontier7": SubResource("Animation_c8max")
+}
+
+[node name="Frontier7" type="StaticBody2D"]
+physics_material_override = ExtResource("1_8fh57")
+script = ExtResource("2_4crvp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nhbqk")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+scale = Vector2(0.252016, 0.252016)
+texture = ExtResource("3_n6utk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_43dfu")
+}

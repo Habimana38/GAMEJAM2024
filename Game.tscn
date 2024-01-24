@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cr4x242k3lcy7"]
+[gd_scene load_steps=17 format=3 uid="uid://cr4x242k3lcy7"]
 
 [ext_resource type="Script" path="res://level/Frontier/script frontier/FrontierManager.gd" id="2_8hie5"]
 [ext_resource type="PackedScene" uid="uid://btq5v1oerbtb3" path="res://level/left.tscn" id="3_4newd"]
@@ -11,6 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://ch2xuyop2qa14" path="res://level/Frontier/frontier_4.tscn" id="6_i2amw"]
 [ext_resource type="PackedScene" uid="uid://ck2p5511y6ott" path="res://level/Frontier/frontier_5.tscn" id="7_b5bwi"]
 [ext_resource type="PackedScene" uid="uid://tacqnbxwghou" path="res://level/Frontier/frontier_6.tscn" id="8_1it45"]
+[ext_resource type="PackedScene" uid="uid://c80qwqixyvcdl" path="res://level/Frontier/frontier_7.tscn" id="9_4uycu"]
+[ext_resource type="PackedScene" uid="uid://drwayk1arr7w4" path="res://level/Frontier/frontier_8.tscn" id="10_qoqoa"]
+[ext_resource type="Texture2D" uid="uid://cegqokyki33d0" path="res://level/Map/fond.png" id="13_kxgjr"]
+[ext_resource type="Texture2D" uid="uid://ftdum43n4c0p" path="res://Interface/affichage/MicrosoftTeams-image (1).png" id="14_gd0ry"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741jg"]
 size = Vector2(16, 896)
@@ -28,7 +32,7 @@ position = Vector2(1024, 512)
 [node name="Frontier" type="StaticBody2D" parent="Level"]
 collision_layer = 2
 script = ExtResource("2_8hie5")
-frontiers = Array[PackedScene]([ExtResource("3_vbwgx"), ExtResource("4_hvchh"), ExtResource("5_ilr1y"), ExtResource("6_i2amw"), ExtResource("7_b5bwi"), ExtResource("8_1it45")])
+frontiers = Array[PackedScene]([ExtResource("3_vbwgx"), ExtResource("4_hvchh"), ExtResource("5_ilr1y"), ExtResource("6_i2amw"), ExtResource("7_b5bwi"), ExtResource("8_1it45"), ExtResource("9_4uycu"), ExtResource("10_qoqoa")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Frontier"]
 shape = SubResource("RectangleShape2D_741jg")
@@ -36,7 +40,7 @@ shape = SubResource("RectangleShape2D_741jg")
 [node name="Polygon2D" type="Polygon2D" parent="Level/Frontier"]
 position = Vector2(-3.05176e-05, -0.511986)
 scale = Vector2(0.250001, 1.024)
-color = Color(0, 0, 0, 0.627451)
+color = Color(0.4, 0, 0.8, 1)
 polygon = PackedVector2Array(-32, -437, -0.343666, -437, 32, -437, 32, 438, 0.499985, 438, -32, 438)
 
 [node name="TimeUntilFirstFrontier" type="Timer" parent="Level/Frontier"]
@@ -48,7 +52,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="TimeOfFrontier" type="Timer" parent="Level/Frontier"]
-wait_time = 15.0
+wait_time = 10.0
 one_shot = true
 
 [node name="Left" parent="Level" instance=ExtResource("3_4newd")]
@@ -76,16 +80,37 @@ position = Vector2(992, 0)
 is_player1 = false
 gamemanager = NodePath("../../GameManager")
 
+[node name="Fond" type="Sprite2D" parent="Level"]
+z_index = -2
+texture = ExtResource("13_kxgjr")
+
 [node name="MainUI" parent="." instance=ExtResource("4_a3qku")]
 
-[node name="Player1" parent="MainUI/PanelContainer/MarginContainer" index="0" node_paths=PackedStringArray("gm")]
-gm = NodePath("../../../../GameManager")
+[node name="MarginContainer" parent="MainUI" index="0"]
+offset_left = 920.0
+offset_top = 36.0
+offset_right = 1128.0
+offset_bottom = 159.0
 
-[node name="TimerUI" parent="MainUI/PanelContainer/MarginContainer" index="1" node_paths=PackedStringArray("gm")]
-gm = NodePath("../../../../GameManager")
+[node name="Player1" parent="MainUI/MarginContainer" index="0" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../GameManager")
 
-[node name="player2" parent="MainUI/PanelContainer/MarginContainer" index="2" node_paths=PackedStringArray("gm")]
-gm = NodePath("../../../../GameManager")
+[node name="TimerUI" parent="MainUI/MarginContainer" index="1" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../GameManager")
+
+[node name="player2" parent="MainUI/MarginContainer" index="2" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../GameManager")
+
+[node name="MarginContainer2" parent="MainUI" index="1"]
+offset_top = 8.0
+offset_bottom = 48.0
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(1024, 96)
+scale = Vector2(0.184234, 0.184234)
+texture = ExtResource("14_gd0ry")
 
 [connection signal="on_player_score" from="GameManager" to="Level/Frontier" method="_on_game_manager_on_player_score"]
 [connection signal="timeout" from="Level/Frontier/TimeUntilFirstFrontier" to="Level/Frontier" method="_on_time_until_frontier_timeout"]

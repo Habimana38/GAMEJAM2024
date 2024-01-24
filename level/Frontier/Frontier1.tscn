@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://e0er5pxkpjv3"]
 
 [ext_resource type="PhysicsMaterial" uid="uid://c0d2ayxdcuu43" path="res://level/Frontier/bounce_frontier.tres" id="1_tlp6o"]
-[ext_resource type="Texture2D" uid="uid://crw5o8xwki1pl" path="res://player/Sprite/playertest.png" id="1_yjnws"]
+[ext_resource type="Texture2D" uid="uid://dt7ugqqg15dn8" path="res://level/Frontier/Sprite frontier/RondBlanc.png" id="2_c52uw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_guymd"]
 radius = 104.307
@@ -13,5 +13,5 @@ physics_material_override = ExtResource("1_tlp6o")
 shape = SubResource("CircleShape2D_guymd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(2.08, 2.08)
-texture = ExtResource("1_yjnws")
+scale = Vector2(0.203125, 0.203125)
+texture = ExtResource("2_c52uw")
