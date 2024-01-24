@@ -13,50 +13,40 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.308
-anchor_top = 0.117
-anchor_right = 0.684
-anchor_bottom = 0.869
-offset_left = -6.78406
-offset_top = -7.80801
-offset_right = 23.168
-offset_bottom = 22.144
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+offset_left = 624.0
+offset_top = 112.0
+offset_right = 1424.0
+offset_bottom = 912.0
 theme_override_constants/margin_top = 30
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("1_f52sm")
 text = "Menu"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 25
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_f52sm")
 icon = ExtResource("2_m2i3g")
 flat = true
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_f52sm")
 icon = ExtResource("3_xm6bj")
 flat = true
 
-[node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_f52sm")
 icon = ExtResource("4_dqm45")
