@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://e0er5pxkpjv3"]
+
+[ext_resource type="PhysicsMaterial" uid="uid://c0d2ayxdcuu43" path="res://level/Frontier/bounce_frontier.tres" id="1_tlp6o"]
+[ext_resource type="Texture2D" uid="uid://crw5o8xwki1pl" path="res://player/Sprite/playertest.png" id="1_yjnws"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_guymd"]
+radius = 104.307
+
+[node name="Frontier1" type="StaticBody2D"]
+physics_material_override = ExtResource("1_tlp6o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_guymd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.08, 2.08)
+texture = ExtResource("1_yjnws")

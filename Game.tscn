@@ -1,11 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr4x242k3lcy7"]
+[gd_scene load_steps=13 format=3 uid="uid://cr4x242k3lcy7"]
 
+[ext_resource type="Script" path="res://level/Frontier/script frontier/FrontierManager.gd" id="2_8hie5"]
 [ext_resource type="PackedScene" uid="uid://btq5v1oerbtb3" path="res://level/left.tscn" id="3_4newd"]
+[ext_resource type="PackedScene" uid="uid://e0er5pxkpjv3" path="res://level/Frontier/Frontier1.tscn" id="3_vbwgx"]
 [ext_resource type="PackedScene" uid="uid://go0ljd5c18y" path="res://level/Map/cage.tscn" id="3_w5mov"]
+[ext_resource type="PackedScene" uid="uid://dmp7vxkj4k45e" path="res://Interface/main_ui.tscn" id="4_a3qku"]
+[ext_resource type="PackedScene" uid="uid://dqpeitmixryfn" path="res://level/Frontier/Frontier2.tscn" id="4_hvchh"]
+[ext_resource type="PackedScene" uid="uid://dkr2ulr4mg80w" path="res://level/Frontier/Frontier3.tscn" id="5_ilr1y"]
 [ext_resource type="PackedScene" uid="uid://cu2mm1fip1nxg" path="res://level/game_manager.tscn" id="5_j3dy4"]
+[ext_resource type="PackedScene" uid="uid://ch2xuyop2qa14" path="res://level/Frontier/frontier_4.tscn" id="6_i2amw"]
+[ext_resource type="PackedScene" uid="uid://ck2p5511y6ott" path="res://level/Frontier/frontier_5.tscn" id="7_b5bwi"]
+[ext_resource type="PackedScene" uid="uid://tacqnbxwghou" path="res://level/Frontier/frontier_6.tscn" id="8_1it45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741jg"]
-size = Vector2(34, 896)
+size = Vector2(16, 896)
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,15 +27,29 @@ position = Vector2(1024, 512)
 
 [node name="Frontier" type="StaticBody2D" parent="Level"]
 collision_layer = 2
+script = ExtResource("2_8hie5")
+frontiers = Array[PackedScene]([ExtResource("3_vbwgx"), ExtResource("4_hvchh"), ExtResource("5_ilr1y"), ExtResource("6_i2amw"), ExtResource("7_b5bwi"), ExtResource("8_1it45")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Frontier"]
 shape = SubResource("RectangleShape2D_741jg")
 
 [node name="Polygon2D" type="Polygon2D" parent="Level/Frontier"]
 position = Vector2(-3.05176e-05, -0.511986)
-scale = Vector2(0.500001, 1.024)
+scale = Vector2(0.250001, 1.024)
 color = Color(0, 0, 0, 0.627451)
 polygon = PackedVector2Array(-32, -437, -0.343666, -437, 32, -437, 32, 438, 0.499985, 438, -32, 438)
+
+[node name="TimeUntilFirstFrontier" type="Timer" parent="Level/Frontier"]
+wait_time = 5.0
+one_shot = true
+
+[node name="TimeUntilNextFrontier" type="Timer" parent="Level/Frontier"]
+wait_time = 5.0
+one_shot = true
+
+[node name="TimeOfFrontier" type="Timer" parent="Level/Frontier"]
+wait_time = 15.0
+one_shot = true
 
 [node name="Left" parent="Level" instance=ExtResource("3_4newd")]
 position = Vector2(-1024, -512)
@@ -53,3 +75,21 @@ gamemanager = NodePath("../../GameManager")
 position = Vector2(992, 0)
 is_player1 = false
 gamemanager = NodePath("../../GameManager")
+
+[node name="MainUI" parent="." instance=ExtResource("4_a3qku")]
+
+[node name="Player1" parent="MainUI/PanelContainer/MarginContainer" index="0" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../../GameManager")
+
+[node name="TimerUI" parent="MainUI/PanelContainer/MarginContainer" index="1" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../../GameManager")
+
+[node name="player2" parent="MainUI/PanelContainer/MarginContainer" index="2" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../../GameManager")
+
+[connection signal="on_player_score" from="GameManager" to="Level/Frontier" method="_on_game_manager_on_player_score"]
+[connection signal="timeout" from="Level/Frontier/TimeUntilFirstFrontier" to="Level/Frontier" method="_on_time_until_frontier_timeout"]
+[connection signal="timeout" from="Level/Frontier/TimeUntilNextFrontier" to="Level/Frontier" method="_on_time_until_frontier_timeout"]
+[connection signal="timeout" from="Level/Frontier/TimeOfFrontier" to="Level/Frontier" method="_on_time_of_frontier_timeout"]
+
+[editable path="MainUI"]

@@ -18,7 +18,7 @@ wall_min_slide_angle = 0.0
 platform_wall_layers = 8
 script = ExtResource("2_eivu7")
 maxSpeed = 1200
-acceleration = 6000
+acceleration = 10000
 friction = 5000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
