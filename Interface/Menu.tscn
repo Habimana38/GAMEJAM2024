@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://beraq6up5wsp3"]
+[gd_scene load_steps=5 format=3 uid="uid://beraq6up5wsp3"]
 
 [ext_resource type="Theme" uid="uid://drgbriahi2tdu" path="res://Interface/Themes/theme.tres" id="1_f52sm"]
+[ext_resource type="Texture2D" uid="uid://b40xfmytwf7qs" path="res://Interface/Links/Button/Play.png" id="2_m2i3g"]
+[ext_resource type="Texture2D" uid="uid://b0nc8w5cdawt2" path="res://Interface/Links/Button/Quit.png" id="3_xm6bj"]
+[ext_resource type="Texture2D" uid="uid://gbsgct284ipn" path="res://Interface/Links/Button/Option.png" id="4_dqm45"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -39,19 +42,22 @@ text = "Menu"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 80
+theme_override_constants/separation = 25
 
 [node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_f52sm")
-text = "Reprendre"
+icon = ExtResource("2_m2i3g")
+flat = true
 
 [node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_f52sm")
-text = "Quitter"
+icon = ExtResource("3_xm6bj")
+flat = true
 
 [node name="Button3" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_f52sm")
-text = "Option"
+icon = ExtResource("4_dqm45")
+flat = true
