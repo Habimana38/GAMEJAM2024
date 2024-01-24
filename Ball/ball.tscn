@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cugrsp5rlkf76"]
 
 [ext_resource type="Script" path="res://Ball/ball.gd" id="1_ry2x6"]
-[ext_resource type="Texture2D" uid="uid://eyawabdf4vy0" path="res://Ball/MicrosoftTeams-image.png" id="2_urp5p"]
+[ext_resource type="Texture2D" uid="uid://noc80xppre7i" path="res://Ball/MicrosoftTeams-image (4).png" id="2_hufx8"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gxuy6"]
 friction = 0.9
@@ -27,7 +27,7 @@ shape = SubResource("CircleShape2D_2vo2y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-7.86781e-06, -7.86781e-06)
-scale = Vector2(0.0770578, 0.0770577)
-texture = ExtResource("2_urp5p")
+scale = Vector2(0.328657, 0.328657)
+texture = ExtResource("2_hufx8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

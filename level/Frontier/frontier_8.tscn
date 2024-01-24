@@ -16,8 +16,8 @@ size = Vector2(32, 256)
 physics_material_override = ExtResource("1_jd33o")
 script = ExtResource("1_n3mp6")
 walls = [NodePath("haut"), NodePath("mid"), NodePath("bas")]
-enableColor = Color(0.976471, 0, 0, 1)
-disableColor = Color(1, 0, 0, 0.462745)
+enableColor = Color(1, 1, 1, 1)
+disableColor = Color(1, 1, 1, 0.462745)
 
 [node name="haut" type="CollisionShape2D" parent="."]
 position = Vector2(0, -320)
