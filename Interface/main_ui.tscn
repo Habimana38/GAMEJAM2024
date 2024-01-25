@@ -222,6 +222,7 @@ grow_vertical = 2
 script = ExtResource("4_vwnn3")
 
 [node name="3" type="TextureRect" parent="321"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -234,10 +235,12 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(361, 559)
 texture = ExtResource("4_80v7x")
 
 [node name="2" type="TextureRect" parent="321"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -266,6 +269,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1e-05, 1e-05)
 pivot_offset = Vector2(361, 559)
 texture = ExtResource("6_u46cp")
 
