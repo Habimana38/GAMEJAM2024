@@ -58,17 +58,19 @@ func _spawn():
 	on_game_init.emit()
 	
 func _add_point_player1():
+	ball.queue_free()
 	player1Score += 1
 	on_player_score.emit()
 	has_game_started = false
 
 func _add_point_player2():
+	ball.queue_free()
 	player2Score += 1
 	on_player_score.emit()
 	has_game_started = false
 	
 func _restart():
-	ball.queue_free()
+	
 	player1.global_position = player1_spawn.global_position
 	player2.global_position = player2_spawn.global_position
 	_spawn_ball()

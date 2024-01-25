@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dqpeitmixryfn" path="res://level/Frontier/Frontier2.tscn" id="4_hvchh"]
 [ext_resource type="PackedScene" uid="uid://dkr2ulr4mg80w" path="res://level/Frontier/Frontier3.tscn" id="5_ilr1y"]
 [ext_resource type="PackedScene" uid="uid://cu2mm1fip1nxg" path="res://level/game_manager.tscn" id="5_j3dy4"]
+[ext_resource type="Texture2D" uid="uid://dtm3ha1s2up8y" path="res://Interface/flags/player bresil.png" id="5_sgqc6"]
 [ext_resource type="PackedScene" uid="uid://ch2xuyop2qa14" path="res://level/Frontier/frontier_4.tscn" id="6_i2amw"]
 [ext_resource type="PackedScene" uid="uid://ck2p5511y6ott" path="res://level/Frontier/frontier_5.tscn" id="7_b5bwi"]
 [ext_resource type="PackedScene" uid="uid://tacqnbxwghou" path="res://level/Frontier/frontier_6.tscn" id="8_1it45"]
@@ -15,10 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://drwayk1arr7w4" path="res://level/Frontier/frontier_8.tscn" id="10_qoqoa"]
 [ext_resource type="LabelSettings" uid="uid://coe6gt6h5hkva" path="res://Interface/LabelSettings/TitleLabel.tres" id="16_bn1bx"]
 [ext_resource type="Script" path="res://Interface/Scripts/Final_score.gd" id="16_dk08a"]
-[ext_resource type="Texture2D" uid="uid://civ7n4otj71ki" path="res://Interface/flags/Allemagne.png" id="17_j1f23"]
 [ext_resource type="LabelSettings" uid="uid://dtr0oaux0kh4d" path="res://Interface/LabelSettings/SmallTitle.tres" id="18_guecb"]
 [ext_resource type="LabelSettings" uid="uid://biwdrmgqcr54x" path="res://Interface/LabelSettings/Score.tres" id="19_k0cdl"]
-[ext_resource type="Texture2D" uid="uid://c024iir8uy30y" path="res://Interface/flags/Brasil.png" id="20_iebob"]
+[ext_resource type="Texture2D" path="res://Interface/flags/Brasil.png" id="20_iebob"]
 [ext_resource type="Texture2D" uid="uid://83r1tiamjjtx" path="res://Interface/affichage/restart.png" id="21_e2x8a"]
 [ext_resource type="Texture2D" uid="uid://cdurpvmbubfth" path="res://Interface/affichage/restart_press.png" id="22_d481r"]
 [ext_resource type="Texture2D" uid="uid://cuatsvkjknrxb" path="res://Interface/Links/Button/quit normal.png" id="23_cssbi"]
@@ -98,7 +98,7 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="Final_score/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("17_j1f23")
+texture = ExtResource("5_sgqc6")
 
 [node name="Label" type="Label" parent="Final_score/HBoxContainer/VBoxContainer"]
 layout_mode = 2

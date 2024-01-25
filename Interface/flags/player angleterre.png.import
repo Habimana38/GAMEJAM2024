@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcmapm6d01uyj"
-path="res://.godot/imported/Nouvelle zelande.png-9cb421d0b20ddc08d2a0bb171f0963ce.ctex"
+uid="uid://cyr1y6pvrmbp4"
+path="res://.godot/imported/player angleterre.png-ac32ac0904e83da231115c03adf636bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/flags/Nouvelle zelande.png"
-dest_files=["res://.godot/imported/Nouvelle zelande.png-9cb421d0b20ddc08d2a0bb171f0963ce.ctex"]
+source_file="res://Interface/flags/player angleterre.png"
+dest_files=["res://.godot/imported/player angleterre.png-ac32ac0904e83da231115c03adf636bc.ctex"]
 
 [params]
 

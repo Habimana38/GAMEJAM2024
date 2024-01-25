@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bppfwm0x2ekb2"
+uid="uid://bv56mlm0trg2y"
 path="res://.godot/imported/Suisse.png-e338291b49f169661df9b8f2002b40ec.ctex"
 metadata={
 "vram_texture": false
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=512
+process/size_limit=0
 detect_3d/compress_to=1

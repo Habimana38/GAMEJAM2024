@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://byiaov7kf83h"]
+[gd_scene load_steps=3 format=3 uid="uid://byiaov7kf83h"]
 
 [ext_resource type="PackedScene" uid="uid://dqj07dpfv3bae" path="res://player/player.tscn" id="1_7sqy1"]
+[ext_resource type="Texture2D" uid="uid://cmkuatwvfpbcr" path="res://Interface/flags/player japon.png" id="2_2ewaq"]
 
 [node name="Player 1" instance=ExtResource("1_7sqy1")]
 isplayer1 = true
@@ -8,3 +9,6 @@ move_up = "move_up_player1"
 move_down = "move_down_player1"
 move_left = "move_left_player1"
 move_right = "move_right_player1"
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_2ewaq")

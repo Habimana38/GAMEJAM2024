@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqj07dpfv3bae"]
 
 [ext_resource type="Script" path="res://player/Script/player.gd" id="2_eivu7"]
-[ext_resource type="Texture2D" uid="uid://cy88fi1mdbnmr" path="res://Interface/flags/Japon.png" id="2_odbcm"]
+[ext_resource type="Texture2D" uid="uid://cv82nrcg8go0q" path="res://Interface/flags/Japon.png" id="2_odbcm"]
 [ext_resource type="Script" path="res://player/Line2D.gd" id="3_2mlgh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi0lq"]

@@ -1,24 +1,43 @@
-[gd_scene load_steps=20 format=3 uid="uid://t44p2hs2npos"]
+[gd_scene load_steps=37 format=3 uid="uid://t44p2hs2npos"]
 
 [ext_resource type="Script" path="res://Interface/characterSelection.gd" id="1_5hrse"]
-[ext_resource type="Texture2D" uid="uid://civ7n4otj71ki" path="res://Interface/flags/Allemagne.png" id="2_mgw6e"]
+[ext_resource type="Texture2D" uid="uid://ccw328ju254tw" path="res://Interface/flags/Angleterre.png" id="2_fdr70"]
+[ext_resource type="Texture2D" uid="uid://cyr1y6pvrmbp4" path="res://Interface/flags/player angleterre.png" id="2_x3sud"]
+[ext_resource type="Texture2D" uid="uid://d2l02166k2of6" path="res://Interface/flags/player belgique.png" id="3_bx8dk"]
 [ext_resource type="PackedScene" uid="uid://btg7gnyuar7gx" path="res://Interface/character_selection_panel.tscn" id="3_ixemx"]
-[ext_resource type="Texture2D" uid="uid://c2noqmly04oj8" path="res://Interface/flags/Angleterre.png" id="3_rhd2v"]
-[ext_resource type="Texture2D" uid="uid://c024iir8uy30y" path="res://Interface/flags/Brasil.png" id="4_armvu"]
+[ext_resource type="Texture2D" uid="uid://mkho5425adlc" path="res://Interface/flags/Belgique.png" id="3_vpml1"]
+[ext_resource type="Texture2D" uid="uid://dtm3ha1s2up8y" path="res://Interface/flags/player bresil.png" id="4_jaw40"]
+[ext_resource type="Texture2D" uid="uid://3vd5nicc7p4l" path="res://Interface/flags/Bresil.png" id="4_k6nrc"]
 [ext_resource type="Texture2D" uid="uid://b40xfmytwf7qs" path="res://Interface/Links/Button/Play.png" id="5_4h00d"]
-[ext_resource type="Texture2D" uid="uid://bu5ixl0vfhgh4" path="res://Interface/flags/Canada.png" id="5_t6lm5"]
-[ext_resource type="Texture2D" uid="uid://68v3vmvbnh8y" path="res://Interface/flags/Espagne.png" id="6_d7lt6"]
-[ext_resource type="Texture2D" uid="uid://dybge27ruxqns" path="res://Interface/flags/France.png" id="7_jhcok"]
-[ext_resource type="Texture2D" uid="uid://cxiw8ah8j0b3m" path="res://Interface/flags/Irlande.png" id="8_wkf1v"]
-[ext_resource type="Texture2D" uid="uid://1xjryw8dwfwa" path="res://Interface/flags/Italie.png" id="9_c1lxd"]
-[ext_resource type="Texture2D" uid="uid://cy88fi1mdbnmr" path="res://Interface/flags/Japon.png" id="10_hsd26"]
-[ext_resource type="Texture2D" uid="uid://dcmapm6d01uyj" path="res://Interface/flags/Nouvelle zelande.png" id="11_751wo"]
-[ext_resource type="Texture2D" uid="uid://bg8vlh26ndf3q" path="res://Interface/flags/Pays bas.png" id="12_r0j37"]
-[ext_resource type="Texture2D" uid="uid://cwjsmi708kxrf" path="res://Interface/flags/Pologne.png" id="13_rpl3b"]
-[ext_resource type="Texture2D" uid="uid://d3lt3ngndluw" path="res://Interface/flags/Suede.png" id="14_xx41f"]
-[ext_resource type="Texture2D" uid="uid://bppfwm0x2ekb2" path="res://Interface/flags/Suisse.png" id="15_c4g2a"]
-[ext_resource type="Texture2D" uid="uid://diiylj4nvqqqq" path="res://Interface/flags/USA.png" id="16_gxm68"]
+[ext_resource type="Texture2D" uid="uid://c0tvdd2bokqq" path="res://Interface/flags/Canada.png" id="5_sij7t"]
+[ext_resource type="Texture2D" uid="uid://o5rg7o01tv6n" path="res://Interface/flags/player canada.png" id="5_vv82y"]
+[ext_resource type="Texture2D" uid="uid://jxk2og5hs25o" path="res://Interface/flags/player espagne.png" id="6_tppou"]
+[ext_resource type="Texture2D" uid="uid://cwsueb44o54m2" path="res://Interface/flags/Espagne.png" id="6_xvtts"]
+[ext_resource type="Texture2D" uid="uid://b2l888xnjpiu" path="res://Interface/flags/player france.png" id="7_pl2tj"]
+[ext_resource type="Texture2D" uid="uid://ctewj66slag6b" path="res://Interface/flags/France.png" id="7_rfb32"]
+[ext_resource type="Texture2D" uid="uid://p42yd8dm5rn8" path="res://Interface/flags/player irlande.png" id="8_336dr"]
+[ext_resource type="Texture2D" uid="uid://cojkp7m4bbfad" path="res://Interface/flags/Irlande.png" id="8_oagyo"]
+[ext_resource type="Texture2D" uid="uid://7uxkav6m0n4f" path="res://Interface/flags/player italie.png" id="9_auhkk"]
+[ext_resource type="Texture2D" uid="uid://02g6u43gtvc" path="res://Interface/flags/Italie.png" id="9_xk0y4"]
+[ext_resource type="Texture2D" uid="uid://d1hufv74m41tq" path="res://Interface/flags/player nouvelles zelande.png" id="10_irylp"]
+[ext_resource type="Texture2D" uid="uid://cym5tjytugdko" path="res://Interface/flags/Nouvelles Zelande.png" id="11_h5l7n"]
+[ext_resource type="Texture2D" uid="uid://dac74nqlfx7wf" path="res://Interface/flags/player pays bas.png" id="11_rj2sl"]
+[ext_resource type="Texture2D" uid="uid://clo3mt2mhamom" path="res://Interface/flags/player pologne.png" id="12_0x3i4"]
+[ext_resource type="Texture2D" uid="uid://yhmbqdhsio88" path="res://Interface/flags/Pays bas.png" id="12_ws8yu"]
+[ext_resource type="Texture2D" uid="uid://bx88pru74op6r" path="res://Interface/flags/player suede.png" id="13_2af7o"]
+[ext_resource type="Texture2D" uid="uid://djl2famph8rmv" path="res://Interface/flags/Pologne.png" id="13_j4hlj"]
+[ext_resource type="Texture2D" uid="uid://dob3vds13j2pj" path="res://Interface/flags/Suede.png" id="14_0alvw"]
+[ext_resource type="Texture2D" uid="uid://daytd23bdrvs" path="res://Interface/flags/player suisse.png" id="14_tvfdg"]
+[ext_resource type="Texture2D" uid="uid://bv56mlm0trg2y" path="res://Interface/flags/Suisse.png" id="15_6q0ty"]
+[ext_resource type="Texture2D" uid="uid://duhl4ged78hba" path="res://Interface/flags/player USA.png" id="15_nmt5d"]
+[ext_resource type="Texture2D" uid="uid://dl1x8o2fc28ik" path="res://Interface/flags/USA.png" id="16_4m0sc"]
+[ext_resource type="Texture2D" uid="uid://cl6kdna11274v" path="res://Interface/flags/player allemagne.png" id="16_puq5g"]
 [ext_resource type="Texture2D" uid="uid://dq7b0rjf7k8hd" path="res://level/Map/fondmenu.jpg" id="17_7e6je"]
+[ext_resource type="Texture2D" uid="uid://cr8bs640dgyte" path="res://Interface/flags/Allemagne.png" id="17_kehms"]
+[ext_resource type="Texture2D" uid="uid://cmkuatwvfpbcr" path="res://Interface/flags/player japon.png" id="17_mwpe7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v6urq"]
+load_path = "res://.godot/imported/Jaapon.png-4b34e620f33c5ebe027283e2fd4c85bb.ctex"
 
 [node name="Character Selection" type="Control"]
 layout_mode = 3
@@ -28,7 +47,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5hrse")
-flags = Array[Texture]([ExtResource("2_mgw6e"), ExtResource("3_rhd2v"), ExtResource("4_armvu"), ExtResource("5_t6lm5"), ExtResource("6_d7lt6"), ExtResource("7_jhcok"), ExtResource("8_wkf1v"), ExtResource("9_c1lxd"), ExtResource("10_hsd26"), ExtResource("11_751wo"), ExtResource("12_r0j37"), ExtResource("13_rpl3b"), ExtResource("14_xx41f"), ExtResource("15_c4g2a"), ExtResource("16_gxm68")])
+flags = Array[Texture]([ExtResource("2_x3sud"), ExtResource("3_bx8dk"), ExtResource("4_jaw40"), ExtResource("5_vv82y"), ExtResource("6_tppou"), ExtResource("7_pl2tj"), ExtResource("8_336dr"), ExtResource("9_auhkk"), ExtResource("10_irylp"), ExtResource("11_rj2sl"), ExtResource("12_0x3i4"), ExtResource("13_2af7o"), ExtResource("14_tvfdg"), ExtResource("15_nmt5d"), ExtResource("16_puq5g"), ExtResource("17_mwpe7")])
+charactercountry = Array[Texture]([ExtResource("2_fdr70"), ExtResource("3_vpml1"), ExtResource("4_k6nrc"), ExtResource("5_sij7t"), ExtResource("6_xvtts"), ExtResource("7_rfb32"), ExtResource("8_oagyo"), ExtResource("9_xk0y4"), ExtResource("11_h5l7n"), ExtResource("12_ws8yu"), ExtResource("13_j4hlj"), ExtResource("14_0alvw"), ExtResource("15_6q0ty"), ExtResource("16_4m0sc"), ExtResource("17_kehms"), SubResource("CompressedTexture2D_v6urq")])
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

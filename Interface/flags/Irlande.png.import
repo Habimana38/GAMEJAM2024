@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxiw8ah8j0b3m"
+uid="uid://cojkp7m4bbfad"
 path="res://.godot/imported/Irlande.png-b9d0bd5429ebf25672cb44cafc165cb2.ctex"
 metadata={
 "vram_texture": false
@@ -30,5 +30,5 @@ process/premult_alpha=false
 process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
-process/size_limit=512
+process/size_limit=0
 detect_3d/compress_to=1
