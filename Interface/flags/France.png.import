@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ftdum43n4c0p"
-path="res://.godot/imported/MicrosoftTeams-image (1).png-c08bdf03c157b1d6d86ae33562d8fdea.ctex"
+uid="uid://dybge27ruxqns"
+path="res://.godot/imported/France.png-029408f745931421f94cb4edcb595031.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/affichage/MicrosoftTeams-image (1).png"
-dest_files=["res://.godot/imported/MicrosoftTeams-image (1).png-c08bdf03c157b1d6d86ae33562d8fdea.ctex"]
+source_file="res://Interface/flags/France.png"
+dest_files=["res://.godot/imported/France.png-029408f745931421f94cb4edcb595031.ctex"]
 
 [params]
 

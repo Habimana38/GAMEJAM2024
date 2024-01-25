@@ -1,0 +1,81 @@
+[gd_scene load_steps=20 format=3 uid="uid://t44p2hs2npos"]
+
+[ext_resource type="Script" path="res://Interface/characterSelection.gd" id="1_5hrse"]
+[ext_resource type="Texture2D" uid="uid://civ7n4otj71ki" path="res://Interface/flags/Allemagne.png" id="2_mgw6e"]
+[ext_resource type="PackedScene" uid="uid://btg7gnyuar7gx" path="res://Interface/character_selection_panel.tscn" id="3_ixemx"]
+[ext_resource type="Texture2D" uid="uid://c2noqmly04oj8" path="res://Interface/flags/Angleterre.png" id="3_rhd2v"]
+[ext_resource type="Texture2D" uid="uid://c024iir8uy30y" path="res://Interface/flags/Brasil.png" id="4_armvu"]
+[ext_resource type="Texture2D" uid="uid://b40xfmytwf7qs" path="res://Interface/Links/Button/Play.png" id="5_4h00d"]
+[ext_resource type="Texture2D" uid="uid://bu5ixl0vfhgh4" path="res://Interface/flags/Canada.png" id="5_t6lm5"]
+[ext_resource type="Texture2D" uid="uid://68v3vmvbnh8y" path="res://Interface/flags/Espagne.png" id="6_d7lt6"]
+[ext_resource type="Texture2D" uid="uid://dybge27ruxqns" path="res://Interface/flags/France.png" id="7_jhcok"]
+[ext_resource type="Texture2D" uid="uid://cxiw8ah8j0b3m" path="res://Interface/flags/Irlande.png" id="8_wkf1v"]
+[ext_resource type="Texture2D" uid="uid://1xjryw8dwfwa" path="res://Interface/flags/Italie.png" id="9_c1lxd"]
+[ext_resource type="Texture2D" uid="uid://cy88fi1mdbnmr" path="res://Interface/flags/Japon.png" id="10_hsd26"]
+[ext_resource type="Texture2D" uid="uid://dcmapm6d01uyj" path="res://Interface/flags/Nouvelle zelande.png" id="11_751wo"]
+[ext_resource type="Texture2D" uid="uid://bg8vlh26ndf3q" path="res://Interface/flags/Pays bas.png" id="12_r0j37"]
+[ext_resource type="Texture2D" uid="uid://cwjsmi708kxrf" path="res://Interface/flags/Pologne.png" id="13_rpl3b"]
+[ext_resource type="Texture2D" uid="uid://d3lt3ngndluw" path="res://Interface/flags/Suede.png" id="14_xx41f"]
+[ext_resource type="Texture2D" uid="uid://bppfwm0x2ekb2" path="res://Interface/flags/Suisse.png" id="15_c4g2a"]
+[ext_resource type="Texture2D" uid="uid://diiylj4nvqqqq" path="res://Interface/flags/USA.png" id="16_gxm68"]
+[ext_resource type="Texture2D" uid="uid://dq7b0rjf7k8hd" path="res://level/Map/fondmenu.jpg" id="17_7e6je"]
+
+[node name="Character Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hrse")
+flags = Array[Texture]([ExtResource("2_mgw6e"), ExtResource("3_rhd2v"), ExtResource("4_armvu"), ExtResource("5_t6lm5"), ExtResource("6_d7lt6"), ExtResource("7_jhcok"), ExtResource("8_wkf1v"), ExtResource("9_c1lxd"), ExtResource("10_hsd26"), ExtResource("11_751wo"), ExtResource("12_r0j37"), ExtResource("13_rpl3b"), ExtResource("14_xx41f"), ExtResource("15_c4g2a"), ExtResource("16_gxm68")])
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_7e6je")
+expand_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -626.0
+offset_top = -227.5
+offset_right = 626.0
+offset_bottom = 227.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Character selection panel" parent="HBoxContainer" node_paths=PackedStringArray("character_selection") instance=ExtResource("3_ixemx")]
+layout_mode = 2
+isplayer1 = true
+character_selection = NodePath("../..")
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Character selection panel2" parent="HBoxContainer" node_paths=PackedStringArray("character_selection") instance=ExtResource("3_ixemx")]
+layout_mode = 2
+character_selection = NodePath("../..")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 955.0
+offset_top = 776.0
+offset_right = 1093.0
+offset_bottom = 921.0
+scale = Vector2(1.5, 1.5)
+pivot_offset = Vector2(69, 72)
+icon = ExtResource("5_4h00d")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

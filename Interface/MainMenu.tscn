@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccdfdrmmyfxq7"]
+[gd_scene load_steps=8 format=3 uid="uid://ccdfdrmmyfxq7"]
 
 [ext_resource type="Theme" uid="uid://drgbriahi2tdu" path="res://Interface/Themes/theme.tres" id="1_8vtm0"]
+[ext_resource type="Script" path="res://Interface/Scripts/MainMenu.gd" id="1_olech"]
 [ext_resource type="Texture2D" uid="uid://b40xfmytwf7qs" path="res://Interface/Links/Button/Play.png" id="2_n6st0"]
+[ext_resource type="Texture2D" uid="uid://dq7b0rjf7k8hd" path="res://level/Map/fondmenu.jpg" id="2_q0oj2"]
 [ext_resource type="Texture2D" uid="uid://doidwpxgepuss" path="res://Interface/Links/Logo.png" id="3_f0vix"]
 [ext_resource type="Texture2D" uid="uid://gbsgct284ipn" path="res://Interface/Links/Button/Option.png" id="3_on33w"]
 [ext_resource type="Texture2D" uid="uid://b0nc8w5cdawt2" path="res://Interface/Links/Button/Quit.png" id="4_aona6"]
-[ext_resource type="Texture2D" uid="uid://b2in4v65ts0iw" path="res://Interface/Links/menu fond.jpg" id="5_5khni"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_olech")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -22,7 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_5khni")
+texture = ExtResource("2_q0oj2")
 expand_mode = 3
 
 [node name="Label" type="TextureRect" parent="."]
@@ -92,3 +94,7 @@ theme = ExtResource("1_8vtm0")
 icon = ExtResource("4_aona6")
 flat = true
 icon_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

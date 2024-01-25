@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ftdum43n4c0p"
-path="res://.godot/imported/MicrosoftTeams-image (1).png-c08bdf03c157b1d6d86ae33562d8fdea.ctex"
+uid="uid://cwjsmi708kxrf"
+path="res://.godot/imported/Pologne.png-1b68f4a46648d799eab06ef285f1e597.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/affichage/MicrosoftTeams-image (1).png"
-dest_files=["res://.godot/imported/MicrosoftTeams-image (1).png-c08bdf03c157b1d6d86ae33562d8fdea.ctex"]
+source_file="res://Interface/flags/Pologne.png"
+dest_files=["res://.godot/imported/Pologne.png-1b68f4a46648d799eab06ef285f1e597.ctex"]
 
 [params]
 

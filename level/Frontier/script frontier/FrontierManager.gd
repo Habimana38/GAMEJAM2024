@@ -3,12 +3,13 @@ extends StaticBody2D
 @onready var timeUntilFirstFrontier : Timer = $TimeUntilFirstFrontier
 @onready var timeUntilNextFrontier : Timer = $TimeUntilNextFrontier
 @onready var timeOfFrontier : Timer = $TimeOfFrontier
+@export var gamemanager : GameManager
 
 var currentfrontier : Node
 @export var frontiers : Array[PackedScene]
 
 func _ready():
-	_begin()
+	gamemanager.on_game_starts.connect(_begin)
 
 func _begin():
 	timeUntilFirstFrontier.start()
@@ -41,7 +42,6 @@ func _restart():
 
 
 func _on_game_manager_on_player_score():
-	print("aaaaaaaaaaaaaaaaaaaa")
 	_restart()
 	if(currentfrontier != null):
 		currentfrontier.queue_free()

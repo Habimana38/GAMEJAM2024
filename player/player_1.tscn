@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dqj07dpfv3bae" path="res://player/player.tscn" id="1_7sqy1"]
 
 [node name="Player 1" instance=ExtResource("1_7sqy1")]
+isplayer1 = true
 move_up = "move_up_player1"
 move_down = "move_down_player1"
 move_left = "move_left_player1"
