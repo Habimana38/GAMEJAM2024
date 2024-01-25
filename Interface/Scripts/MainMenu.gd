@@ -10,4 +10,4 @@ func _on_quit_pressed():
 
 
 func _on_option_pressed():
-	print("afficher")
+	get_tree().change_scene_to_file("res://Interface/Option.tscn")

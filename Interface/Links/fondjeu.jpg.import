@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qj1kawvkoc1j"
-path="res://.godot/imported/MicrosoftTeams-image (4).png-26e2642e7df642de9c4002ef66d66de8.ctex"
+uid="uid://bm5ra2iwocv0m"
+path="res://.godot/imported/fondjeu.jpg-7316ff860bae17791cc08c45e804770a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://level/Map/MicrosoftTeams-image (4).png"
-dest_files=["res://.godot/imported/MicrosoftTeams-image (4).png-26e2642e7df642de9c4002ef66d66de8.ctex"]
+source_file="res://Interface/Links/fondjeu.jpg"
+dest_files=["res://.godot/imported/fondjeu.jpg-7316ff860bae17791cc08c45e804770a.ctex"]
 
 [params]
 

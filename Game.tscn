@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cr4x242k3lcy7"]
+[gd_scene load_steps=26 format=3 uid="uid://cr4x242k3lcy7"]
 
 [ext_resource type="Script" path="res://level/Frontier/script frontier/FrontierManager.gd" id="2_8hie5"]
 [ext_resource type="PackedScene" uid="uid://btq5v1oerbtb3" path="res://level/left.tscn" id="3_4newd"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://tacqnbxwghou" path="res://level/Frontier/frontier_6.tscn" id="8_1it45"]
 [ext_resource type="PackedScene" uid="uid://c80qwqixyvcdl" path="res://level/Frontier/frontier_7.tscn" id="9_4uycu"]
 [ext_resource type="PackedScene" uid="uid://drwayk1arr7w4" path="res://level/Frontier/frontier_8.tscn" id="10_qoqoa"]
-[ext_resource type="Texture2D" uid="uid://cegqokyki33d0" path="res://level/Map/fond.png" id="13_kxgjr"]
 [ext_resource type="LabelSettings" uid="uid://coe6gt6h5hkva" path="res://Interface/LabelSettings/TitleLabel.tres" id="16_bn1bx"]
 [ext_resource type="Script" path="res://Interface/Scripts/Final_score.gd" id="16_dk08a"]
 [ext_resource type="Texture2D" uid="uid://civ7n4otj71ki" path="res://Interface/flags/Allemagne.png" id="17_j1f23"]
@@ -23,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://83r1tiamjjtx" path="res://Interface/affichage/restart.png" id="21_e2x8a"]
 [ext_resource type="Texture2D" uid="uid://cdurpvmbubfth" path="res://Interface/affichage/restart_press.png" id="22_d481r"]
 [ext_resource type="Texture2D" uid="uid://cuatsvkjknrxb" path="res://Interface/Links/Button/quit normal.png" id="23_cssbi"]
+[ext_resource type="Texture2D" uid="uid://bm5ra2iwocv0m" path="res://Interface/Links/fondjeu.jpg" id="24_n1irv"]
+[ext_resource type="PackedScene" uid="uid://bhyn4w2p6dm3b" path="res://Interface/But.tscn" id="24_r38w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741jg"]
 size = Vector2(16, 896)
@@ -34,66 +35,8 @@ player1_spawn = NodePath("../Level/Spawn_player_1")
 player2_spawn = NodePath("../Level/Spawn_player_2")
 ball_spawn = NodePath("../Level/Ball spawn")
 
-[node name="Level" type="Node2D" parent="."]
-position = Vector2(1024, 512)
-
-[node name="Frontier" type="StaticBody2D" parent="Level" node_paths=PackedStringArray("gamemanager")]
-collision_layer = 2
-script = ExtResource("2_8hie5")
-gamemanager = NodePath("../../GameManager")
-frontiers = Array[PackedScene]([ExtResource("3_vbwgx"), ExtResource("4_hvchh"), ExtResource("5_ilr1y"), ExtResource("6_i2amw"), ExtResource("7_b5bwi"), ExtResource("8_1it45"), ExtResource("9_4uycu"), ExtResource("10_qoqoa")])
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Frontier"]
-shape = SubResource("RectangleShape2D_741jg")
-
-[node name="Polygon2D" type="Polygon2D" parent="Level/Frontier"]
-position = Vector2(-3.05176e-05, -0.511986)
-scale = Vector2(0.250001, 1.024)
-color = Color(0.4, 0, 0.8, 1)
-polygon = PackedVector2Array(-32, -437, -0.343666, -437, 32, -437, 32, 438, 0.499985, 438, -32, 438)
-
-[node name="TimeUntilFirstFrontier" type="Timer" parent="Level/Frontier"]
-wait_time = 5.0
-one_shot = true
-
-[node name="TimeUntilNextFrontier" type="Timer" parent="Level/Frontier"]
-wait_time = 5.0
-one_shot = true
-
-[node name="TimeOfFrontier" type="Timer" parent="Level/Frontier"]
-wait_time = 10.0
-one_shot = true
-
-[node name="Left" parent="Level" instance=ExtResource("3_4newd")]
-position = Vector2(-1024, -512)
-
-[node name="Right" parent="Level" instance=ExtResource("3_4newd")]
-position = Vector2(1024, -512)
-scale = Vector2(-1, 1)
-
-[node name="Ball spawn" type="Node2D" parent="Level"]
-
-[node name="Spawn_player_1" type="Node2D" parent="Level"]
-position = Vector2(-680, 0)
-
-[node name="Spawn_player_2" type="Node2D" parent="Level"]
-position = Vector2(728, 0)
-
-[node name="Cage" parent="Level" node_paths=PackedStringArray("gamemanager") instance=ExtResource("3_w5mov")]
-position = Vector2(-992, 0)
-rotation = -3.14159
-gamemanager = NodePath("../../GameManager")
-
-[node name="Cage2" parent="Level" node_paths=PackedStringArray("gamemanager") instance=ExtResource("3_w5mov")]
-position = Vector2(992, 0)
-is_player1 = false
-gamemanager = NodePath("../../GameManager")
-
-[node name="Fond" type="Sprite2D" parent="Level"]
-z_index = -2
-texture = ExtResource("13_kxgjr")
-
 [node name="MainUI" parent="." instance=ExtResource("4_a3qku")]
+layer = 9
 
 [node name="TimerUI" parent="MainUI/TextureRect" index="0" node_paths=PackedStringArray("gm")]
 gm = NodePath("../../../GameManager")
@@ -109,7 +52,7 @@ offset_top = 8.0
 offset_bottom = 48.0
 
 [node name="Final_score" type="CanvasLayer" parent="." node_paths=PackedStringArray("gamemanager", "playerscore")]
-visible = false
+layer = 10
 follow_viewport_enabled = true
 script = ExtResource("16_dk08a")
 gamemanager = NodePath("../GameManager")
@@ -215,13 +158,80 @@ texture_normal = ExtResource("23_cssbi")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="But" parent="." instance=ExtResource("24_r38w4")]
+offset_left = 1024.0
+offset_top = 512.0
+offset_right = 1024.0
+offset_bottom = 512.0
+
+[node name="Level" type="Node2D" parent="."]
+position = Vector2(1024, 512)
+
+[node name="Frontier" type="StaticBody2D" parent="Level" node_paths=PackedStringArray("gamemanager")]
+collision_layer = 2
+script = ExtResource("2_8hie5")
+gamemanager = NodePath("../../GameManager")
+frontiers = Array[PackedScene]([ExtResource("3_vbwgx"), ExtResource("4_hvchh"), ExtResource("5_ilr1y"), ExtResource("6_i2amw"), ExtResource("7_b5bwi"), ExtResource("8_1it45"), ExtResource("9_4uycu"), ExtResource("10_qoqoa")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Frontier"]
+shape = SubResource("RectangleShape2D_741jg")
+
+[node name="Polygon2D" type="Polygon2D" parent="Level/Frontier"]
+position = Vector2(-3.05176e-05, -0.511986)
+scale = Vector2(0.250001, 1.024)
+color = Color(0.4, 0, 0.8, 1)
+polygon = PackedVector2Array(-32, -437, -0.343666, -437, 32, -437, 32, 438, 0.499985, 438, -32, 438)
+
+[node name="TimeUntilFirstFrontier" type="Timer" parent="Level/Frontier"]
+wait_time = 5.0
+one_shot = true
+
+[node name="TimeUntilNextFrontier" type="Timer" parent="Level/Frontier"]
+wait_time = 5.0
+one_shot = true
+
+[node name="TimeOfFrontier" type="Timer" parent="Level/Frontier"]
+wait_time = 10.0
+one_shot = true
+
+[node name="Left" parent="Level" instance=ExtResource("3_4newd")]
+position = Vector2(-1024, -512)
+
+[node name="Right" parent="Level" instance=ExtResource("3_4newd")]
+position = Vector2(1024, -512)
+scale = Vector2(-1, 1)
+
+[node name="Ball spawn" type="Node2D" parent="Level"]
+
+[node name="Spawn_player_1" type="Node2D" parent="Level"]
+position = Vector2(-680, 0)
+
+[node name="Spawn_player_2" type="Node2D" parent="Level"]
+position = Vector2(728, 0)
+
+[node name="Cage" parent="Level" node_paths=PackedStringArray("gamemanager") instance=ExtResource("3_w5mov")]
+position = Vector2(-992, 0)
+rotation = -3.14159
+gamemanager = NodePath("../../GameManager")
+
+[node name="Cage2" parent="Level" node_paths=PackedStringArray("gamemanager") instance=ExtResource("3_w5mov")]
+position = Vector2(992, 0)
+is_player1 = false
+gamemanager = NodePath("../../GameManager")
+
+[node name="Fond" type="Sprite2D" parent="Level"]
+z_index = -2
+texture = ExtResource("24_n1irv")
+
 [connection signal="on_game_ends" from="GameManager" to="Final_score" method="_on_game_manager_on_game_ends"]
 [connection signal="on_game_init" from="GameManager" to="MainUI" method="_on_game_manager_on_game_init"]
+[connection signal="on_game_starts" from="GameManager" to="Level/Frontier" method="_begin"]
+[connection signal="on_player_score" from="GameManager" to="But" method="_on_game_manager_on_player_score"]
 [connection signal="on_player_score" from="GameManager" to="Level/Frontier" method="_on_game_manager_on_player_score"]
+[connection signal="pressed" from="Final_score/HBoxContainer2/restart" to="Final_score" method="_on_restart_pressed"]
+[connection signal="pressed" from="Final_score/HBoxContainer2/quit" to="Final_score" method="_on_quit_pressed"]
 [connection signal="timeout" from="Level/Frontier/TimeUntilFirstFrontier" to="Level/Frontier" method="_on_time_until_frontier_timeout"]
 [connection signal="timeout" from="Level/Frontier/TimeUntilNextFrontier" to="Level/Frontier" method="_on_time_until_frontier_timeout"]
 [connection signal="timeout" from="Level/Frontier/TimeOfFrontier" to="Level/Frontier" method="_on_time_of_frontier_timeout"]
-[connection signal="pressed" from="Final_score/HBoxContainer2/restart" to="Final_score" method="_on_restart_pressed"]
-[connection signal="pressed" from="Final_score/HBoxContainer2/quit" to="Final_score" method="_on_quit_pressed"]
 
 [editable path="MainUI"]

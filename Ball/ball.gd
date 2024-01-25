@@ -22,6 +22,8 @@ func _on_body_entered(body : Node):
 			var force = player.velocity * .5;
 			apply_impulse(force)
 			
+	
+			
 func _move_to(position:Vector2):
 	freeze = true
 	sleeping = true

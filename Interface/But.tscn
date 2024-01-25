@@ -1,48 +1,77 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhyn4w2p6dm3b"]
+[gd_scene load_steps=7 format=3 uid="uid://bhyn4w2p6dm3b"]
 
 [ext_resource type="Theme" uid="uid://drgbriahi2tdu" path="res://Interface/Themes/theme.tres" id="1_p3f0s"]
-[ext_resource type="Script" path="res://Interface/AnimationPlayer.gd" id="2_o8s68"]
+[ext_resource type="Script" path="res://Interface/But.gd" id="1_rrb1f"]
+[ext_resource type="Texture2D" uid="uid://byr5pt8mu6aei" path="res://Interface/affichage/goal.png" id="2_qyqfn"]
 
 [sub_resource type="Animation" id="Animation_6mc88"]
 resource_name = "Goal"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:position")
+tracks/0/path = NodePath("Label:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-10, 410), Vector2(1820, 410)]
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_u7er7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mfmqi"]
 _data = {
-"Goal": SubResource("Animation_6mc88")
+"Goal": SubResource("Animation_6mc88"),
+"RESET": SubResource("Animation_u7er7")
 }
 
 [node name="But" type="Control"]
+z_index = 50
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rrb1f")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-offset_left = -10.0
-offset_top = 410.0
-offset_right = 207.002
-offset_bottom = 520.0
+[node name="Label" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -830.2
+offset_top = -297.6
+offset_right = 829.8
+offset_bottom = 297.4
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(830, 297)
 size_flags_horizontal = 8
 theme = ExtResource("1_p3f0s")
-text = "GOAL"
+texture = ExtResource("2_qyqfn")
+expand_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_mfmqi")
 }
-script = ExtResource("2_o8s68")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

@@ -8,9 +8,6 @@ extends StaticBody2D
 var currentfrontier : Node
 @export var frontiers : Array[PackedScene]
 
-func _ready():
-	gamemanager.on_game_starts.connect(_begin)
-
 func _begin():
 	timeUntilFirstFrontier.start()
  
@@ -18,6 +15,9 @@ func _begin():
 func _on_time_until_frontier_timeout():
 	print("debut frontier")
 	timeOfFrontier.start()
+	if currentfrontier != null:
+		currentfrontier.queue_free()
+
 	currentfrontier = _get_random()
 	print("Spawned frontier : " + currentfrontier.name)
 	add_child(currentfrontier)
@@ -34,14 +34,14 @@ func _get_random() -> Node:
 	var item = frontiers[randi() % frontiers.size()]
 	return item.instantiate()
 
-func _restart():
+func _stop():
 	timeUntilFirstFrontier.stop()
 	timeUntilNextFrontier.stop()
 	timeOfFrontier.stop()
-	_begin()
 
 
 func _on_game_manager_on_player_score():
-	_restart()
 	if(currentfrontier != null):
 		currentfrontier.queue_free()
+	
+	_stop()

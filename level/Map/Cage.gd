@@ -10,4 +10,4 @@ func _on_body_entered(body):
 			gamemanager._add_point_player2()
 		else:
 			gamemanager._add_point_player1()
-		gamemanager._restart()
+		
