@@ -10,9 +10,11 @@
 [ext_resource type="Script" path="res://Interface/Scripts/startCount.gd" id="4_vwnn3"]
 [ext_resource type="Texture2D" uid="uid://cwud12dubr4iu" path="res://Interface/affichage/2.png" id="5_ydiqq"]
 [ext_resource type="Texture2D" uid="uid://n0ro6lsqya14" path="res://Interface/affichage/3.png" id="6_u46cp"]
-[ext_resource type="Texture2D" uid="uid://civ7n4otj71ki" path="res://Interface/flags/Allemagne.png" id="7_r3eb8"]
 [ext_resource type="Script" path="res://Interface/Scripts/firstCountry.gd" id="8_8go8k"]
 [ext_resource type="Script" path="res://Interface/secondCountry.gd" id="9_lwm7o"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_picpt"]
+load_path = "res://.godot/imported/Allemagne.png-999764eaeddedc7f372af4682d750198.ctex"
 
 [sub_resource type="Animation" id="Animation_48dun"]
 resource_name = "321"
@@ -191,7 +193,7 @@ offset_top = 36.0
 offset_right = 170.0
 offset_bottom = 191.0
 pivot_offset = Vector2(77, 77)
-texture = ExtResource("7_r3eb8")
+texture = SubResource("CompressedTexture2D_picpt")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("8_8go8k")
@@ -203,7 +205,7 @@ offset_top = 36.0
 offset_right = 499.0
 offset_bottom = 191.0
 pivot_offset = Vector2(77, 77)
-texture = ExtResource("7_r3eb8")
+texture = SubResource("CompressedTexture2D_picpt")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("9_lwm7o")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c024iir8uy30y"
-path="res://.godot/imported/Brasil.png-0bfa3ad0779e6bf14f5ddedeb744d8a4.ctex"
+uid="uid://jxk2og5hs25o"
+path="res://.godot/imported/player espagne.png-3e78c426f5ac9678a6ccfdeb1e6996af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interface/flags/Brasil.png"
-dest_files=["res://.godot/imported/Brasil.png-0bfa3ad0779e6bf14f5ddedeb744d8a4.ctex"]
+source_file="res://Interface/flags/player espagne.png"
+dest_files=["res://.godot/imported/player espagne.png-3e78c426f5ac9678a6ccfdeb1e6996af.ctex"]
 
 [params]
 

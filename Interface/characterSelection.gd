@@ -3,7 +3,7 @@ extends Control
 class_name CharacterSelection
 
 @export var flags : Array[Texture]
-
+@export var charactercountry : Array[Texture]
 
 
 func _on_button_pressed():

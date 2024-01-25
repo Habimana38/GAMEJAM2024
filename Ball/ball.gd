@@ -7,6 +7,7 @@ func _physics_process(delta):
 	apply_friction(air_friction * delta)
 	
 
+
 func apply_friction(amount):
 	if linear_velocity.length() > amount:
 		apply_force(-linear_velocity.normalized() * amount)
@@ -31,3 +32,12 @@ func _move_to(position:Vector2):
 	set_axis_velocity(Vector2.ZERO)
 	freeze = false
 	sleeping = true
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	$Timer.start()
+
+
+func _on_timer_timeout():
+	queue_free()
+	GameManager.Instance._restart()

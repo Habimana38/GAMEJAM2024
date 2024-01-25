@@ -25,7 +25,7 @@ func _on_previous_pressed():
 
 		
 func refresh_index():
-	country_image.texture = character_selection.flags[index]
+	country_image.texture = character_selection.charactercountry[index]
 	if isplayer1 :
 		player_name.text = "Player 1"
 		GlobalPlayer.player1texture = character_selection.flags[index]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://btg7gnyuar7gx"]
+[gd_scene load_steps=5 format=3 uid="uid://btg7gnyuar7gx"]
 
 [ext_resource type="LabelSettings" uid="uid://coe6gt6h5hkva" path="res://Interface/LabelSettings/TitleLabel.tres" id="1_hul6u"]
 [ext_resource type="Script" path="res://Interface/Scripts/character_selection_panel.gd" id="1_kyrnv"]
-[ext_resource type="Texture2D" uid="uid://bppfwm0x2ekb2" path="res://Interface/flags/Suisse.png" id="2_klfcr"]
 [ext_resource type="Texture2D" uid="uid://t4uixpm12dwu" path="res://level/Map/button previous.png" id="3_pfqhf"]
 [ext_resource type="Texture2D" uid="uid://x8hi4qsjy0ys" path="res://level/Map/bouton character.png" id="3_sdc7r"]
 
@@ -33,7 +32,6 @@ expand_icon = true
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_klfcr")
 expand_mode = 3
 
 [node name="next" type="Button" parent="HBoxContainer"]
