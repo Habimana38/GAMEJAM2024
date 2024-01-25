@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwksr68kln3v"]
+
+[ext_resource type="Texture2D" uid="uid://df3kd7t64kt5q" path="res://Interface/Links/control.png" id="1_53pvh"]
+[ext_resource type="Texture2D" uid="uid://ci4cd8kjs5w4k" path="res://Interface/Links/Button/Quit sans fond.png" id="2_a1i0x"]
+
+[node name="Option" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+offset_bottom = 6.0
+texture = ExtResource("1_53pvh")
+expand_mode = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_bottom = 145.0
+grow_horizontal = 0
+icon = ExtResource("2_a1i0x")
+flat = true
