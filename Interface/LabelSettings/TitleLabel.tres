@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://coe6gt6h5hkva"]
+
+[ext_resource type="FontFile" uid="uid://d2qao64e1e2du" path="res://Interface/font/bahnschrift_bold.ttf" id="1_eiju7"]
+
+[resource]
+font = ExtResource("1_eiju7")
+font_size = 150

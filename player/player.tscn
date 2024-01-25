@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dqj07dpfv3bae"]
 
 [ext_resource type="Script" path="res://player/Script/player.gd" id="2_eivu7"]
+[ext_resource type="Texture2D" uid="uid://cy88fi1mdbnmr" path="res://Interface/flags/Japon.png" id="2_odbcm"]
 [ext_resource type="Script" path="res://player/Line2D.gd" id="3_2mlgh"]
-[ext_resource type="Texture2D" uid="uid://crw5o8xwki1pl" path="res://player/Sprite/playertest.png" id="3_dgk52"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wi0lq"]
 radius = 40.0125
@@ -26,8 +26,8 @@ shape = SubResource("CircleShape2D_wi0lq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.78814e-06, -1.78814e-06)
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("3_dgk52")
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("2_odbcm")
 
 [node name="Line2D" type="Line2D" parent="."]
 show_behind_parent = true

@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="RPG Game"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Interface/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 run/low_processor_mode=true
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalPlayer="*res://player/Script/globalPlayer.gd"
 
 [display]
 

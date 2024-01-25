@@ -1,39 +1,277 @@
-[gd_scene load_steps=4 format=3 uid="uid://dmp7vxkj4k45e"]
+[gd_scene load_steps=17 format=3 uid="uid://dmp7vxkj4k45e"]
 
 [ext_resource type="Script" path="res://Interface/Scripts/Player1Score.gd" id="1_e0qsf"]
+[ext_resource type="Script" path="res://Interface/Scripts/main_ui.gd" id="1_s2lgs"]
+[ext_resource type="Texture2D" uid="uid://ftdum43n4c0p" path="res://Interface/affichage/MicrosoftTeams-image (1).png" id="2_2cdt0"]
 [ext_resource type="Script" path="res://Interface/Scripts/TimerUI.gd" id="2_xsu3y"]
 [ext_resource type="Script" path="res://Interface/Scripts/Player2Score.gd" id="3_qexhi"]
+[ext_resource type="LabelSettings" uid="uid://dtbt14pmn61dc" path="res://Interface/LabelSettings/chrono.tres" id="3_v7a6e"]
+[ext_resource type="Texture2D" uid="uid://cxro4443uxquk" path="res://Interface/affichage/1.png" id="4_80v7x"]
+[ext_resource type="Script" path="res://Interface/Scripts/startCount.gd" id="4_vwnn3"]
+[ext_resource type="Texture2D" uid="uid://cwud12dubr4iu" path="res://Interface/affichage/2.png" id="5_ydiqq"]
+[ext_resource type="Texture2D" uid="uid://n0ro6lsqya14" path="res://Interface/affichage/3.png" id="6_u46cp"]
+[ext_resource type="Texture2D" uid="uid://civ7n4otj71ki" path="res://Interface/flags/Allemagne.png" id="7_r3eb8"]
+[ext_resource type="Script" path="res://Interface/Scripts/firstCountry.gd" id="8_8go8k"]
+[ext_resource type="Script" path="res://Interface/secondCountry.gd" id="9_lwm7o"]
 
-[node name="MainUI" type="CanvasLayer"]
+[sub_resource type="Animation" id="Animation_48dun"]
+resource_name = "321"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("3:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("1:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ais0u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2l8rj"]
+_data = {
+"321": SubResource("Animation_48dun"),
+"RESET": SubResource("Animation_ais0u")
+}
+
+[node name="MainUI" type="CanvasLayer" node_paths=PackedStringArray("startcount")]
 follow_viewport_enabled = true
+script = ExtResource("1_s2lgs")
+startcount = NodePath("321")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_left = 774.0
-offset_right = 1274.0
-offset_bottom = 123.0
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 50
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = -19.0
+offset_right = 256.0
+offset_bottom = 205.0
+grow_horizontal = 2
+pivot_offset = Vector2(256, 112)
+texture = ExtResource("2_2cdt0")
+stretch_mode = 3
 
-[node name="Player1" type="Label" parent="MarginContainer"]
+[node name="TimerUI" type="Label" parent="TextureRect"]
+layout_mode = 2
+offset_left = 240.0
+offset_top = 16.0
+offset_right = 282.0
+offset_bottom = 66.0
+pivot_offset = Vector2(21, 25)
+size_flags_horizontal = 4
+text = "10"
+label_settings = ExtResource("3_v7a6e")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_xsu3y")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.5
+offset_top = -25.0
+offset_right = 58.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 25)
+alignment = 1
+
+[node name="Player1" type="Label" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "10"
+label_settings = ExtResource("3_v7a6e")
+horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("1_e0qsf")
 
-[node name="TimerUI" type="Label" parent="MarginContainer"]
+[node name="_" type="Label" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-text = "10"
-script = ExtResource("2_xsu3y")
+size_flags_horizontal = 8
+text = "-"
+label_settings = ExtResource("3_v7a6e")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="player2" type="Label" parent="MarginContainer"]
+[node name="player2" type="Label" parent="TextureRect/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "0"
+label_settings = ExtResource("3_v7a6e")
+vertical_alignment = 1
 script = ExtResource("3_qexhi")
+
+[node name="firstCountry" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 36.0
+offset_right = 170.0
+offset_bottom = 191.0
+pivot_offset = Vector2(77, 77)
+texture = ExtResource("7_r3eb8")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("8_8go8k")
+
+[node name="secondCountry" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 36.0
+offset_right = 499.0
+offset_bottom = 191.0
+pivot_offset = Vector2(77, 77)
+texture = ExtResource("7_r3eb8")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("9_lwm7o")
 
 [node name="MarginContainer2" type="MarginContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="321" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_vwnn3")
+
+[node name="3" type="TextureRect" parent="321"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(361, 559)
+texture = ExtResource("4_80v7x")
+
+[node name="2" type="TextureRect" parent="321"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(361, 559)
+texture = ExtResource("5_ydiqq")
+
+[node name="1" type="TextureRect" parent="321"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(361, 559)
+texture = ExtResource("6_u46cp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="321"]
+libraries = {
+"": SubResource("AnimationLibrary_2l8rj")
+}
+
+[connection signal="animation_finished" from="321/AnimationPlayer" to="321" method="_on_animation_player_animation_finished"]

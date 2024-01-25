@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cr4x242k3lcy7"]
+[gd_scene load_steps=25 format=3 uid="uid://cr4x242k3lcy7"]
 
 [ext_resource type="Script" path="res://level/Frontier/script frontier/FrontierManager.gd" id="2_8hie5"]
 [ext_resource type="PackedScene" uid="uid://btq5v1oerbtb3" path="res://level/left.tscn" id="3_4newd"]
@@ -14,7 +14,15 @@
 [ext_resource type="PackedScene" uid="uid://c80qwqixyvcdl" path="res://level/Frontier/frontier_7.tscn" id="9_4uycu"]
 [ext_resource type="PackedScene" uid="uid://drwayk1arr7w4" path="res://level/Frontier/frontier_8.tscn" id="10_qoqoa"]
 [ext_resource type="Texture2D" uid="uid://cegqokyki33d0" path="res://level/Map/fond.png" id="13_kxgjr"]
-[ext_resource type="Texture2D" uid="uid://ftdum43n4c0p" path="res://Interface/affichage/MicrosoftTeams-image (1).png" id="14_gd0ry"]
+[ext_resource type="LabelSettings" uid="uid://coe6gt6h5hkva" path="res://Interface/LabelSettings/TitleLabel.tres" id="16_bn1bx"]
+[ext_resource type="Script" path="res://Interface/Scripts/Final_score.gd" id="16_dk08a"]
+[ext_resource type="Texture2D" uid="uid://civ7n4otj71ki" path="res://Interface/flags/Allemagne.png" id="17_j1f23"]
+[ext_resource type="LabelSettings" uid="uid://dtr0oaux0kh4d" path="res://Interface/LabelSettings/SmallTitle.tres" id="18_guecb"]
+[ext_resource type="LabelSettings" uid="uid://biwdrmgqcr54x" path="res://Interface/LabelSettings/Score.tres" id="19_k0cdl"]
+[ext_resource type="Texture2D" uid="uid://c024iir8uy30y" path="res://Interface/flags/Brasil.png" id="20_iebob"]
+[ext_resource type="Texture2D" uid="uid://83r1tiamjjtx" path="res://Interface/affichage/restart.png" id="21_e2x8a"]
+[ext_resource type="Texture2D" uid="uid://cdurpvmbubfth" path="res://Interface/affichage/restart_press.png" id="22_d481r"]
+[ext_resource type="Texture2D" uid="uid://cuatsvkjknrxb" path="res://Interface/Links/Button/quit normal.png" id="23_cssbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_741jg"]
 size = Vector2(16, 896)
@@ -29,9 +37,10 @@ ball_spawn = NodePath("../Level/Ball spawn")
 [node name="Level" type="Node2D" parent="."]
 position = Vector2(1024, 512)
 
-[node name="Frontier" type="StaticBody2D" parent="Level"]
+[node name="Frontier" type="StaticBody2D" parent="Level" node_paths=PackedStringArray("gamemanager")]
 collision_layer = 2
 script = ExtResource("2_8hie5")
+gamemanager = NodePath("../../GameManager")
 frontiers = Array[PackedScene]([ExtResource("3_vbwgx"), ExtResource("4_hvchh"), ExtResource("5_ilr1y"), ExtResource("6_i2amw"), ExtResource("7_b5bwi"), ExtResource("8_1it45"), ExtResource("9_4uycu"), ExtResource("10_qoqoa")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Frontier"]
@@ -86,35 +95,133 @@ texture = ExtResource("13_kxgjr")
 
 [node name="MainUI" parent="." instance=ExtResource("4_a3qku")]
 
-[node name="MarginContainer" parent="MainUI" index="0"]
-offset_left = 920.0
-offset_top = 36.0
-offset_right = 1128.0
-offset_bottom = 159.0
-
-[node name="Player1" parent="MainUI/MarginContainer" index="0" node_paths=PackedStringArray("gm")]
+[node name="TimerUI" parent="MainUI/TextureRect" index="0" node_paths=PackedStringArray("gm")]
 gm = NodePath("../../../GameManager")
 
-[node name="TimerUI" parent="MainUI/MarginContainer" index="1" node_paths=PackedStringArray("gm")]
-gm = NodePath("../../../GameManager")
+[node name="Player1" parent="MainUI/TextureRect/HBoxContainer" index="0" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../../GameManager")
 
-[node name="player2" parent="MainUI/MarginContainer" index="2" node_paths=PackedStringArray("gm")]
-gm = NodePath("../../../GameManager")
+[node name="player2" parent="MainUI/TextureRect/HBoxContainer" index="2" node_paths=PackedStringArray("gm")]
+gm = NodePath("../../../../GameManager")
 
 [node name="MarginContainer2" parent="MainUI" index="1"]
 offset_top = 8.0
 offset_bottom = 48.0
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Final_score" type="CanvasLayer" parent="." node_paths=PackedStringArray("gamemanager", "playerscore")]
+visible = false
+follow_viewport_enabled = true
+script = ExtResource("16_dk08a")
+gamemanager = NodePath("../GameManager")
+playerscore = NodePath("HBoxContainer/Score")
 
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-position = Vector2(1024, 96)
-scale = Vector2(0.184234, 0.184234)
-texture = ExtResource("14_gd0ry")
+[node name="ColorRect" type="ColorRect" parent="Final_score"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.054902, 0.054902, 0.054902, 0.8)
 
+[node name="Title" type="Label" parent="Final_score"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -576.0
+offset_right = 576.0
+offset_bottom = 376.0
+grow_horizontal = 2
+text = "Game Result"
+label_settings = ExtResource("16_bn1bx")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Final_score"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.5
+offset_top = -150.5
+offset_right = 288.5
+offset_bottom = 150.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Final_score/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Final_score/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("17_j1f23")
+
+[node name="Label" type="Label" parent="Final_score/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Allemagne"
+label_settings = ExtResource("18_guecb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="Final_score/HBoxContainer"]
+layout_mode = 2
+text = "4 - 1"
+label_settings = ExtResource("19_k0cdl")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Final_score/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Final_score/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("20_iebob")
+
+[node name="Label2" type="Label" parent="Final_score/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Brasil"
+label_settings = ExtResource("18_guecb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Final_score"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -344.0
+offset_top = -304.0
+offset_right = 344.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="restart" type="TextureButton" parent="Final_score/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture_normal = ExtResource("21_e2x8a")
+texture_pressed = ExtResource("22_d481r")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="quit" type="TextureButton" parent="Final_score/HBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+texture_normal = ExtResource("23_cssbi")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="on_game_ends" from="GameManager" to="Final_score" method="_on_game_manager_on_game_ends"]
+[connection signal="on_game_init" from="GameManager" to="MainUI" method="_on_game_manager_on_game_init"]
 [connection signal="on_player_score" from="GameManager" to="Level/Frontier" method="_on_game_manager_on_player_score"]
 [connection signal="timeout" from="Level/Frontier/TimeUntilFirstFrontier" to="Level/Frontier" method="_on_time_until_frontier_timeout"]
 [connection signal="timeout" from="Level/Frontier/TimeUntilNextFrontier" to="Level/Frontier" method="_on_time_until_frontier_timeout"]
 [connection signal="timeout" from="Level/Frontier/TimeOfFrontier" to="Level/Frontier" method="_on_time_of_frontier_timeout"]
+[connection signal="pressed" from="Final_score/HBoxContainer2/restart" to="Final_score" method="_on_restart_pressed"]
+[connection signal="pressed" from="Final_score/HBoxContainer2/quit" to="Final_score" method="_on_quit_pressed"]
 
 [editable path="MainUI"]

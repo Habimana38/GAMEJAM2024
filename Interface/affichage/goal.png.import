@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://eyawabdf4vy0"
-path="res://.godot/imported/MicrosoftTeams-image.png-76820c55e5ab53120f8bd298bfa1cdd9.ctex"
+uid="uid://byr5pt8mu6aei"
+path="res://.godot/imported/goal.png-62214e676b5935bb73c9e47e2da4d56d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Ball/MicrosoftTeams-image.png"
-dest_files=["res://.godot/imported/MicrosoftTeams-image.png-76820c55e5ab53120f8bd298bfa1cdd9.ctex"]
+source_file="res://Interface/affichage/goal.png"
+dest_files=["res://.godot/imported/goal.png-62214e676b5935bb73c9e47e2da4d56d.ctex"]
 
 [params]
 

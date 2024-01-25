@@ -8,6 +8,7 @@ var input : Vector2;
 @export var acceleration = 100;
 @export var friction = 50; 
 
+@export var isplayer1 : bool
 @export var move_up : String;
 @export var move_down : String;
 @export var move_left : String;
@@ -16,7 +17,10 @@ var input : Vector2;
 
 func _ready():
 	screen_size = get_viewport_rect().size
-
+	if isplayer1 :
+		$Sprite2D.texture = GlobalPlayer.player1texture
+	else : 
+		$Sprite2D.texture = GlobalPlayer.player2texture
 
 func _process(delta):
 	
@@ -33,6 +37,8 @@ func _process(delta):
 	
 
 func _physics_process(delta):
+	if GameManager.Instance.has_game_started == false:
+		return
 	
 	if input.length_squared() == 0 :
 		apply_friction(friction * delta)

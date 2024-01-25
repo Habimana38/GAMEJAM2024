@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://btg7gnyuar7gx"]
+
+[ext_resource type="LabelSettings" uid="uid://coe6gt6h5hkva" path="res://Interface/LabelSettings/TitleLabel.tres" id="1_hul6u"]
+[ext_resource type="Script" path="res://Interface/Scripts/character_selection_panel.gd" id="1_kyrnv"]
+[ext_resource type="Texture2D" uid="uid://bppfwm0x2ekb2" path="res://Interface/flags/Suisse.png" id="2_klfcr"]
+[ext_resource type="Texture2D" uid="uid://t4uixpm12dwu" path="res://level/Map/button previous.png" id="3_pfqhf"]
+[ext_resource type="Texture2D" uid="uid://x8hi4qsjy0ys" path="res://level/Map/bouton character.png" id="3_sdc7r"]
+
+[node name="Character selection panel" type="VBoxContainer" node_paths=PackedStringArray("country_image", "player_name")]
+script = ExtResource("1_kyrnv")
+country_image = NodePath("HBoxContainer/TextureRect")
+player_name = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Player 1"
+label_settings = ExtResource("1_hul6u")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+alignment = 1
+
+[node name="previous" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+icon = ExtResource("3_pfqhf")
+flat = true
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_klfcr")
+expand_mode = 3
+
+[node name="next" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+icon = ExtResource("3_sdc7r")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="HBoxContainer/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="HBoxContainer/next" to="." method="_on_next_pressed"]
